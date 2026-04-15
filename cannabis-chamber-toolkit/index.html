@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Leader Toolkit · Cannabis Chamber of Commerce</title>
+<style>
+  :root {
+    --green: #2d7a3e;
+    --green-dark: #1e5529;
+    --green-soft: #e8f3ec;
+    --ink: #1a1f1c;
+    --ink-soft: #4a544d;
+    --paper: #fbfaf6;
+    --card: #ffffff;
+    --border: #e5e3db;
+    --purple: #efeaff;
+    --pink: #fde9ef;
+    --orange: #fdead1;
+    --yellow: #fef6d6;
+    --red: #fde8e6;
+    --blue: #e7f0fb;
+    --gray: #f0efea;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+  }
+  aside {
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    padding: 32px 24px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  aside .logo {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: var(--green-dark);
+    margin-bottom: 4px;
+  }
+  aside .tag {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+  aside nav a {
+    display: block;
+    padding: 10px 12px;
+    margin: 2px -12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.12s;
+  }
+  aside nav a:hover { background: var(--green-soft); }
+  aside nav a.active { background: var(--green-soft); color: var(--green-dark); }
+  aside nav a .num {
+    display: inline-block;
+    width: 22px;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  main {
+    padding: 56px 72px 96px;
+    max-width: 900px;
+  }
+  section {
+    display: none;
+    animation: fade 0.2s;
+  }
+  section.active { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  h1 {
+    font-size: 40px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    padding-top: 12px;
+  }
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 24px 0 6px;
+  }
+  p { margin: 10px 0; }
+  .lede {
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  ul, ol { padding-left: 22px; margin: 10px 0; }
+  li { margin: 4px 0; }
+  li input[type=checkbox] { margin-right: 6px; }
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 36px 0;
+  }
+  blockquote {
+    margin: 16px 0;
+    padding: 14px 20px;
+    border-left: 3px solid var(--green);
+    background: transparent;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .callout {
+    display: flex;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    margin: 16px 0;
+    background: var(--gray);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .callout .icon { font-size: 22px; line-height: 1.4; flex-shrink: 0; }
+  .callout .body { flex: 1; }
+  .callout p:first-child { margin-top: 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout.blue { background: var(--blue); }
+  .callout.green { background: var(--green-soft); }
+  .callout.purple { background: var(--purple); }
+  .callout.pink { background: var(--pink); }
+  .callout.orange { background: var(--orange); }
+  .callout.yellow { background: var(--yellow); }
+  .callout.red { background: var(--red); }
+  .callout.gray { background: var(--gray); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--gray);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+  code, pre {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+  }
+  pre {
+    background: #1a1f1c;
+    color: #e8e8e4;
+    padding: 18px 22px;
+    border-radius: 10px;
+    overflow-x: auto;
+    line-height: 1.55;
+    margin: 14px 0;
+  }
+  p code {
+    background: var(--gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .tier {
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .tier h3 { margin-top: 0; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .tier .price { font-size: 28px; font-weight: 700; margin: 4px 0 2px; color: var(--green-dark); }
+  .tier .sub { font-size: 12px; color: var(--ink-soft); margin-bottom: 14px; }
+  .tier ul { font-size: 13px; padding-left: 18px; }
+  .tier.gold { border: 2px solid var(--green); }
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 24px 0 32px;
+  }
+  .hub-card {
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.15s;
+    display: block;
+  }
+  .hub-card:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(45,122,62,0.08);
+  }
+  .hub-card .icon { font-size: 24px; margin-bottom: 10px; }
+  .hub-card .title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .hub-card .desc { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .details {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 4px 18px;
+    margin: 10px 0;
+    background: var(--card);
+  }
+  .details summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 12px 0;
+    list-style: none;
+  }
+  .details summary::-webkit-details-marker { display: none; }
+  .details summary::before { content: "▸ "; color: var(--green); margin-right: 4px; }
+  .details[open] summary::before { content: "▾ "; }
+  .details[open] { padding-bottom: 16px; }
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    aside { position: static; height: auto; }
+    main { padding: 32px 24px 64px; }
+    .tier-grid, .hub-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="logo">Cannabis Chamber of Commerce</div>
+    <div class="tag">Chapter Leader Toolkit</div>
+    <nav id="nav">
+      <a href="#home" data-section="home"><span class="num">🏠</span>Home</a>
+      <a href="#onboarding" data-section="onboarding"><span class="num">1.</span>Leader Onboarding</a>
+      <a href="#pitch" data-section="pitch"><span class="num">2.</span>Mission & Pitch Kit</a>
+      <a href="#brand" data-section="brand"><span class="num">3.</span>Templates & Brand Kit</a>
+      <a href="#social" data-section="social"><span class="num">4.</span>Social Media SOPs</a>
+      <a href="#events" data-section="events"><span class="num">5.</span>Event Playbook</a>
+      <a href="#news" data-section="news"><span class="num">6.</span>News & Media Library</a>
+    </nav>
+  </aside>
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="active">
+      <h1>Chapter Leader Toolkit</h1>
+      <p class="lede">For Industry Leaders, By Industry Leaders.</p>
+
+      <div class="callout blue">
+        <div class="icon">👋</div>
+        <div class="body">
+          <p><strong>Welcome, Chapter Leader.</strong> Thank you for stepping up. Chapters are the heartbeat of the Cannabis Chamber of Commerce. The work you do in your city, your state, your country is how this organization actually shows up in the world. This toolkit is here to make your job easier, faster, and more effective.</p>
+        </div>
+      </div>
+
+      <blockquote>Our mission is simple: build the legitimate infrastructure the cannabis industry deserves, one chapter at a time.</blockquote>
+
+      <h2>How to use this toolkit</h2>
+      <ul>
+        <li><strong>Scan, don't read.</strong> Every page is built for quick lookups. Grab what you need and go.</li>
+        <li><strong>Copy-paste is encouraged.</strong> Pitches, captions, checklists, templates, all of it is yours to use.</li>
+        <li><strong>Tell us what's missing.</strong> This is a living document. Message HQ and we will update it.</li>
+      </ul>
+
+      <h2>The Toolkit</h2>
+      <div class="hub-grid">
+        <a class="hub-card" href="#onboarding" data-section="onboarding">
+          <div class="icon">📋</div>
+          <div class="title">1. Leader Onboarding</div>
+          <div class="desc">What it means to be a chapter leader, required documents, rules, and your first 30 days.</div>
+        </a>
+        <a class="hub-card" href="#pitch" data-section="pitch">
+          <div class="icon">🎯</div>
+          <div class="title">2. Mission & Pitch Kit</div>
+          <div class="desc">The why, benefits, elevator pitches, membership tiers, and FAQ answers.</div>
+        </a>
+        <a class="hub-card" href="#brand" data-section="brand">
+          <div class="icon">🎨</div>
+          <div class="title">3. Templates & Brand Kit</div>
+          <div class="desc">Logos, colors, fonts, taglines, flyer templates, email signatures.</div>
+        </a>
+        <a class="hub-card" href="#social" data-section="social">
+          <div class="icon">📱</div>
+          <div class="title">4. Social Media SOPs</div>
+          <div class="desc">How to post about your chapter without getting flagged. Caption templates, hashtags, compliance rules.</div>
+        </a>
+        <a class="hub-card" href="#events" data-section="events">
+          <div class="icon">📅</div>
+          <div class="title">5. Event Playbook</div>
+          <div class="desc">Pre-event, day-of, and post-event checklists. Timeline templates.</div>
+        </a>
+        <a class="hub-card" href="#news" data-section="news">
+          <div class="icon">📰</div>
+          <div class="title">6. News & Media Library</div>
+          <div class="desc">Coming soon. A shared place for chapter updates, photos, and press.</div>
+        </a>
+      </div>
+
+      <div class="callout red">
+        <div class="icon">✉️</div>
+        <div class="body">
+          <p><strong>Direct line to HQ.</strong> For anything not covered here, reach out to the Chamber HQ team. We typically respond within 48 hours. Questions, suggestions, and corrections are all welcome.</p>
+          <p>Contact: <em>[HQ email placeholder]</em></p>
+        </div>
+      </div>
+
+      <footer>Last updated: April 2026. Maintained by Cannabis Chamber of Commerce HQ.</footer>
+    </section>
+
+    <!-- ONBOARDING -->
+    <section id="onboarding">
+      <h1>1. Leader Onboarding</h1>
+      <p class="lede">What being a chapter leader means, what you sign, and your first 30 days.</p>
+
+      <div class="callout blue">
+        <div class="icon">📋</div>
+        <div class="body"><p><strong>Start here.</strong> This page walks you through what being a chapter leader actually means, what you need to sign, and what to do in your first 30 days.</p></div>
+      </div>
+
+      <h2>What it means to be a Chapter Leader</h2>
+      <div class="callout gray">
+        <div class="icon">🗓️</div>
+        <div class="body"><p><strong>Leadership teams serve a 1-year term.</strong> Leaders are expected to attend all meetings and support and attend local chapter events in their region.</p></div>
+      </div>
+      <ul>
+        <li>You are the <strong>face of the Chamber</strong> in your region. Members, sponsors, and the press will look to you first.</li>
+        <li>You run at least <strong>one chapter touchpoint per month</strong> (event, call, meetup, or roundtable).</li>
+        <li>You are a <strong>volunteer</strong>, not an employee. We respect your time.</li>
+        <li>You are expected to <strong>follow Chamber brand and compliance rules</strong> (see Brand Kit and Social Media SOPs).</li>
+      </ul>
+
+      <h2>Leadership Commitment</h2>
+      <div class="callout red">
+        <div class="icon">⚠️</div>
+        <div class="body"><p><strong>You must sign the Leadership Commitment and Code of Conduct before taking on a leadership role.</strong> Read it, sign it, return it to HQ.</p></div>
+      </div>
+      <p>By serving as a chapter leader, you commit to the following:</p>
+      <ul>
+        <li><strong>Become a formal paying member</strong> of the organization.</li>
+        <li><strong>Attend all regularly scheduled meetings,</strong> with 1 absence permitted.</li>
+        <li><strong>Support and attend the chapter events</strong> in your region.</li>
+        <li><strong>Demonstrate appropriate leadership, reliability, and professionalism</strong> in any roles, duties, or obligations you volunteer for within the organization.</li>
+      </ul>
+      <div class="callout red">
+        <div class="icon">🚨</div>
+        <div class="body"><p><strong>Any board member that does not meet the above commitments could be subject for removal from the organization.</strong></p></div>
+      </div>
+
+      <h2>Leadership Code of Conduct</h2>
+      <p>The Cannabis Chamber of Commerce strives to create a more open and inclusive environment for professionals of the cannabis industry and shall not tolerate any forms of aggression, harassment or discrimination. As a leader and member of this organization, you are expected to conduct yourself professionally, ethically, and responsibly, with the understanding that your actions reflect on the reputation of our organization.</p>
+
+      <details class="details"><summary>Civility and respect</summary><p>A member shall conduct oneself with civility and respect towards all others.</p></details>
+      <details class="details"><summary>Rules of order</summary><p>A member shall observe and abide by the rules of order and shall maintain decorum during meetings.</p></details>
+      <details class="details"><summary>At all times, including online</summary><p>A member shall observe and abide by the principles embodied in the Code of Conduct at all times, including when engaged in electronic communications: phone calls, text messages, emails, social media, and social networking sites.</p></details>
+      <details class="details"><summary>No disparagement or harassment</summary>
+        <p>A member shall not disparage or harass others in any meetings or events associated with the organization. Harassment includes, but is not limited to:</p>
+        <ul>
+          <li>Deliberate intimidation, stalking, or following of a person</li>
+          <li>Slurs, epithets, name-calling, ridicule, threats, or obscene gestures</li>
+          <li>Displaying inappropriate or offensive images at any organization meeting, event, or space</li>
+          <li>Unwelcome advances</li>
+          <li>Coercing inappropriate sexual or other conduct in exchange for a benefit</li>
+          <li>Retaliation against complainant or witnesses to harassment</li>
+          <li>Advocating for, or encouraging any of the above behavior</li>
+        </ul>
+      </details>
+      <details class="details"><summary>No discrimination</summary><p>A member shall not discriminate against nor use discriminating language on the basis of race, color, ancestry, national origin, religion, sex, disability, age, genetic information, marital status, sexual orientation, gender identity and expression, medical condition, immigration status, physical appearance, military or veteran status, or the status as a victim of domestic violence, assault, or stalking.</p></details>
+      <details class="details"><summary>No detrimental actions</summary><p>A member shall not engage in any actions detrimental to The Cannabis Chamber of Commerce.</p></details>
+      <details class="details"><summary>Fulfill your duties</summary><p>A volunteer leader shall fulfill their duties as detailed in the Leadership Commitment.</p></details>
+
+      <div class="callout yellow">
+        <div class="icon">⚖️</div>
+        <div class="body"><p><strong>Violations may result in removal.</strong> Members who violate this Code of Conduct or otherwise break down order may be ejected from any meeting, and may be subject to censure, suspension, or removal from the organization.</p></div>
+      </div>
+
+      <h2>Required documents</h2>
+      <ul>
+        <li><input type="checkbox"> Signed <strong>Board Member Commitment and Code of Conduct</strong></li>
+        <li><input type="checkbox"> Active <strong>paying membership</strong> in the Chamber (see Pitch Kit for tiers)</li>
+        <li><input type="checkbox"> W-9 or equivalent for any reimbursable expenses</li>
+        <li><input type="checkbox"> Headshot and short bio for the Chamber website</li>
+        <li><input type="checkbox"> Local chapter name and region approved by HQ</li>
+      </ul>
+
+      <h2>Your first 30 days</h2>
+      <div class="callout purple"><div class="icon">1️⃣</div><div class="body"><p><strong>Week 1.</strong> Read every page of this toolkit. Sign and submit the Leadership Commitment and Code of Conduct to HQ. Introduce yourself on the global Chapter Leaders channel.</p></div></div>
+      <div class="callout purple"><div class="icon">2️⃣</div><div class="body"><p><strong>Week 2.</strong> Announce your chapter on your personal social channels. Identify 5 founding members to invite personally. Pick a date for your kickoff event.</p></div></div>
+      <div class="callout purple"><div class="icon">3️⃣</div><div class="body"><p><strong>Week 3.</strong> Confirm your kickoff venue or virtual platform. Send the first member outreach email. Log the event in the Chapter Events database.</p></div></div>
+      <div class="callout purple"><div class="icon">4️⃣</div><div class="body"><p><strong>Week 4.</strong> Host your kickoff or finalize the run-of-show. Submit your first monthly check-in to HQ. Add feedback or suggestions to this toolkit.</p></div></div>
+
+      <h2>Key contacts</h2>
+      <div class="callout green">
+        <div class="icon">📞</div>
+        <div class="body">
+          <p><strong>Chamber HQ</strong></p>
+          <p><strong>General:</strong> <em>[email placeholder]</em><br>
+          <strong>Events and logistics:</strong> <em>[email placeholder]</em><br>
+          <strong>Press and media:</strong> <em>[email placeholder]</em><br>
+          <strong>Your regional lead:</strong> <em>[name placeholder]</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PITCH KIT -->
+    <section id="pitch">
+      <h1>2. Mission & Pitch Kit</h1>
+      <p class="lede">Copy-paste language for talking to members, sponsors, and prospects.</p>
+
+      <div class="callout blue">
+        <div class="icon">🎯</div>
+        <div class="body"><p><strong>Use this page when talking to potential members, sponsors, or anyone asking "what is the Cannabis Chamber?"</strong> Language pulled directly from our official 1-pager.</p></div>
+      </div>
+
+      <blockquote>For Industry Leaders, By Industry Leaders.</blockquote>
+
+      <h2>Who we are</h2>
+      <div class="callout green">
+        <div class="icon">🌱</div>
+        <div class="body"><p>The Cannabis Chamber of Commerce was created to support the growth and development of businesses that serve the regulated cannabis industry by offering a meaningful trade association that offers resources at the local level and a unified voice on the national stage.</p></div>
+      </div>
+      <p>It all starts with you. We are here to support you with our shared resources, educational events, and signature networking mixers. Our organization is a non-profit trade association built by members of the cannabis industry that understand the needs of the developing industry and the partnerships you need to grow your business.</p>
+
+      <h2>What we do</h2>
+      <p>The Cannabis Chamber of Commerce follows in the footsteps and long history of other chambers of commerce across the US. We know our communities, the businesses, and the leaders. Our organization is composed of <strong>local regional chapters led by operators and industry professionals</strong>.</p>
+      <p>Membership gives you an opportunity to get involved in the cannabis community at a higher level. We help bring together the connections, products, and resources that our members are seeking through:</p>
+      <ul>
+        <li>Regional networking expo events</li>
+        <li>Educational forums</li>
+        <li>Job fairs</li>
+        <li>Industry training</li>
+        <li>Other chamber resources</li>
+      </ul>
+
+      <h2>Why join us</h2>
+      <div class="callout purple"><div class="icon">🤝</div><div class="body"><p><strong>Networking & Educational Events.</strong> Regular mixers, expos, forums, and training built around the real needs of the regulated cannabis industry.</p></div></div>
+      <div class="callout purple"><div class="icon">🏛️</div><div class="body"><p><strong>Political Representation in Your Region.</strong> Local government and community representation for your business and our shared industry.</p></div></div>
+      <div class="callout purple"><div class="icon">💼</div><div class="body"><p><strong>B2B Member Promotions.</strong> Logo placement, email introductions, social posts, and access to the exclusive Member Discounts Program.</p></div></div>
+      <div class="callout purple"><div class="icon">🌎</div><div class="body"><p><strong>Expanding Nationwide.</strong> We are searching for professional leaders of the cannabis community across the nation, including the East Coast, New England, and Mid-Atlantic regions.</p></div></div>
+
+      <h2>Membership tiers</h2>
+      <div class="callout gray"><div class="icon">💳</div><div class="body"><p><strong>$100 to $500 per month</strong> <em>(or $1,000 to $5,000 annual payment).</em> Three tiers for Business Members: Silver, Gold, and Platinum.</p></div></div>
+
+      <div class="tier-grid">
+        <div class="tier">
+          <h3>🥈 Silver</h3>
+          <div class="price">$100<span style="font-size:14px;font-weight:400">/mo</span></div>
+          <div class="sub">or $1,000/year</div>
+          <ul>
+            <li>Logo on our website</li>
+            <li>Regional new-member email intro</li>
+            <li>25% off 1 event booth in your region</li>
+            <li>Free tickets to all events in your region (up to 4 guests)</li>
+            <li>Monthly virtual workshops and speed networking</li>
+            <li>Local government representation</li>
+            <li>Member Discounts Program access</li>
+            <li>Member Directory listing (optional)</li>
+          </ul>
+        </div>
+        <div class="tier gold">
+          <h3>🥇 Gold</h3>
+          <div class="price">$250<span style="font-size:14px;font-weight:400">/mo</span></div>
+          <div class="sub">or $2,500/year · Recommended</div>
+          <ul>
+            <li>Everything in Silver</li>
+            <li>Logo linked on all emails across all regions</li>
+            <li>All-regions new-member email intro</li>
+            <li>1 post on all Chamber social accounts</li>
+            <li>50% off 1 event booth in any region</li>
+            <li>50% off event tickets in all other regions (up to 4 guests)</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <h3>💎 Platinum</h3>
+          <div class="price">$500<span style="font-size:14px;font-weight:400">/mo</span></div>
+          <div class="sub">or $5,000/year</div>
+          <ul>
+            <li>Everything in Gold</li>
+            <li>Free 1 event booth in any region</li>
+            <li>Free event tickets in all other regions (up to 8 guests)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout blue"><div class="icon">💡</div><div class="body"><p><strong>Pitch tip.</strong> When a prospect asks "what tier should I start with?", recommend <strong>Gold</strong>. It unlocks cross-region visibility (all-regions email intro, social post, discount on booths in any region) which is where most members see real ROI.</p></div></div>
+
+      <h2>Elevator pitches</h2>
+
+      <h3>30 seconds</h3>
+      <div class="callout gray"><div class="icon">⏱️</div><div class="body"><p>The Cannabis Chamber of Commerce is a non-profit trade association for the regulated cannabis industry. For industry leaders, by industry leaders. We run local regional chapters led by operators themselves, with networking expos, educational forums, and political representation for members. If you are building a business in this space, this is where you plug into the community.</p></div></div>
+
+      <h3>60 seconds</h3>
+      <div class="callout gray"><div class="icon">⏱️</div><div class="body"><p>The Cannabis Chamber of Commerce was created to support the growth of businesses that serve the regulated cannabis industry. We are a non-profit trade association built by members of the industry, for members of the industry. We follow in the footsteps of traditional chambers of commerce, with local regional chapters led by operators and industry professionals. Members get networking expos, educational forums, job fairs, industry training, political representation in their region, and a unified voice on the national stage. We run three membership tiers from $100 to $500 a month, and we are actively expanding across the US. If you want to be introduced to your regional chapter, I can make that happen today.</p></div></div>
+
+      <h3>Written intro (email or DM)</h3>
+<pre>Hi [name],
+
+I lead the [city] chapter of the Cannabis Chamber of Commerce, a non-profit
+trade association for the regulated cannabis industry. For industry leaders,
+by industry leaders.
+
+We run local regional chapters with networking expos, educational forums, and
+political representation at the local and national level. I thought of you
+because [specific reason].
+
+Would you be open to a 15-minute call to see if Chamber membership makes sense
+for you?
+
+Best,
+[Your name]
+[Chapter]
+thecannabischamber.com</pre>
+
+      <h2>FAQ: common objections</h2>
+      <details class="details"><summary>"How is this different from [other cannabis association]?"</summary><p>Most cannabis associations are lobbying groups or regional event producers. The Chamber is a proper trade association: local regional chapters led by operators, a unified national voice, networking and education programming, and political representation at the regional level. We follow the long history of US chambers of commerce, adapted for this industry.</p></details>
+      <details class="details"><summary>"What does it actually cost?"</summary><p>$100 to $500 per month depending on tier, or $1,000 to $5,000 annual. Silver, Gold, or Platinum. See the tier breakdown above.</p></details>
+      <details class="details"><summary>"I am not an operator, can I still join?"</summary><p>Yes. The Chamber is built for businesses that serve the regulated cannabis industry, which includes operators, ancillary businesses, investors, consultants, and service providers. The full ecosystem.</p></details>
+      <details class="details"><summary>"What do I actually get for my money?"</summary><p>Depends on the tier, but every member gets event access in their region, educational workshops, member directory listing, and local government representation. Gold and Platinum add cross-region visibility, social promotion, and booth access at events in any region.</p></details>
+      <details class="details"><summary>"Is the Chamber political?"</summary><p>The Chamber provides political representation and a unified voice for the industry at the regional and national level. We are not a PAC and we do not endorse candidates. Our political work focuses on industry standards, regulatory clarity, and community representation.</p></details>
+
+      <h2>Where to send prospects</h2>
+      <div class="callout green"><div class="icon">🔗</div><div class="body">
+        <p><strong>Website:</strong> <a href="https://www.thecannabischamber.com">thecannabischamber.com</a><br>
+        <strong>Membership signup:</strong> <em>[direct link placeholder]</em><br>
+        <strong>Your regional lead:</strong> <em>[name placeholder]</em></p>
+      </div></div>
+    </section>
+
+    <!-- BRAND KIT -->
+    <section id="brand">
+      <h1>3. Templates & Brand Kit</h1>
+      <p class="lede">Logos, colors, taglines, templates.</p>
+
+      <div class="callout blue"><div class="icon">🎨</div><div class="body"><p><strong>Everything you need to represent the Chamber visually.</strong> Download assets, grab taglines, and use templates for flyers and emails.</p></div></div>
+
+      <div class="callout yellow"><div class="icon">⚠️</div><div class="body"><p><strong>Placeholders in use.</strong> Some assets below are not yet uploaded. HQ will replace placeholders with final files.</p></div></div>
+
+      <h2>Logos</h2>
+      <div class="callout gray"><div class="icon">🖼️</div><div class="body"><p><strong>Primary logo (full color).</strong> <em>Replace with actual file: PNG, SVG, and print-ready PDF.</em></p></div></div>
+      <div class="callout gray"><div class="icon">⬛</div><div class="body"><p><strong>Monochrome logo (black).</strong> <em>Replace with actual file.</em></p></div></div>
+      <div class="callout gray"><div class="icon">⬜</div><div class="body"><p><strong>Monochrome logo (white / reversed).</strong> <em>Replace with actual file.</em></p></div></div>
+      <div class="callout gray"><div class="icon">🏷️</div><div class="body"><p><strong>Chapter lockup.</strong> Format: <strong>Cannabis Chamber of Commerce | [Chapter name]</strong>. HQ will provide a templated lockup for your chapter on request.</p></div></div>
+
+      <h2>Color palette</h2>
+      <div class="callout green"><div class="icon">🎨</div><div class="body">
+        <p><strong>Primary colors</strong> <em>(placeholder, confirm with HQ)</em></p>
+        <p>Chamber Green: <code>#[hex]</code><br>Chamber Dark: <code>#[hex]</code><br>Chamber Cream: <code>#[hex]</code><br>Accent: <code>#[hex]</code></p>
+      </div></div>
+
+      <h2>Typography</h2>
+      <div class="callout gray"><div class="icon">🔤</div><div class="body">
+        <p><strong>Fonts</strong> <em>(placeholder, confirm with HQ)</em></p>
+        <p>Headlines: <em>[font name]</em><br>Body copy: <em>[font name]</em><br>Fallbacks: system sans-serif</p>
+      </div></div>
+
+      <h2>Tagline bank</h2>
+      <p>Use these in flyers, social posts, and email signatures.</p>
+      <ul>
+        <li>For Industry Leaders, By Industry Leaders.</li>
+        <li>The non-profit trade association for the regulated cannabis industry.</li>
+        <li>Resources at the local level. A unified voice on the national stage.</li>
+        <li>Built by the industry, for the industry.</li>
+        <li>Local chapters. National voice.</li>
+        <li>Where cannabis businesses come together.</li>
+      </ul>
+
+      <h2>Flyer templates</h2>
+      <div class="callout pink"><div class="icon">📄</div><div class="body"><p><strong>Event flyer template (Canva).</strong> <em>Replace with actual Canva link.</em> Editable template for chapter events.</p></div></div>
+      <div class="callout pink"><div class="icon">👤</div><div class="body"><p><strong>Member spotlight template.</strong> <em>Replace with actual Canva link.</em></p></div></div>
+      <div class="callout pink"><div class="icon">🙏</div><div class="body"><p><strong>Sponsor thank-you template.</strong> <em>Replace with actual Canva link.</em></p></div></div>
+
+      <h2>Email signature template</h2>
+<pre>[Your Name]
+Chapter Lead, [City] Chapter
+Cannabis Chamber of Commerce
+[email] | [phone]
+thecannabischamber.com
+
+For Industry Leaders, By Industry Leaders.</pre>
+
+      <h2>Slide deck template</h2>
+      <div class="callout orange"><div class="icon">📊</div><div class="body"><p><strong>Chapter presentation deck.</strong> <em>Replace with actual Google Slides / Keynote link.</em> Use this for kickoff events, sponsor pitches, and member onboarding.</p></div></div>
+
+      <h2>Photography guidance</h2>
+      <ul>
+        <li>Use <strong>real photos</strong> from your chapter events whenever possible</li>
+        <li>Avoid stock images of cannabis plants, buds, or consumption</li>
+        <li>Focus on <strong>people, venues, and handshakes</strong>, not product</li>
+        <li>When in doubt, choose a professional business event look over anything that reads as "cannabis lifestyle"</li>
+      </ul>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social">
+      <h1>4. Social Media SOPs</h1>
+      <p class="lede">How to post without getting flagged. Templates, rules, and hashtags.</p>
+
+      <div class="callout red"><div class="icon">⚠️</div><div class="body"><p><strong>Read this before posting anything on behalf of the Chamber.</strong> Cannabis content gets flagged, removed, and shadow-banned on most major platforms. Follow these rules to stay visible.</p></div></div>
+
+      <h2>Posting cadence</h2>
+      <ul>
+        <li><strong>Minimum:</strong> 1 event announcement + 1 recap per chapter event</li>
+        <li><strong>Recommended:</strong> 2 to 4 posts per week during event weeks</li>
+        <li><strong>Always tag:</strong> <code>@cannabischamber</code> <em>(placeholder handle)</em> so HQ can reshare</li>
+      </ul>
+
+      <h2>Compliance: words to avoid</h2>
+      <div class="callout red"><div class="icon">🚫</div><div class="body"><p><strong>Do NOT use these words in captions, hashtags, or images on Instagram, Facebook, TikTok, or LinkedIn.</strong></p></div></div>
+      <table>
+        <thead><tr><th>Avoid</th><th>Use instead</th></tr></thead>
+        <tbody>
+          <tr><td>Marijuana</td><td>Cannabis</td></tr>
+          <tr><td>Weed, pot, bud</td><td>Cannabis, the plant</td></tr>
+          <tr><td>Buy, sale, for sale, purchase</td><td>Learn more, connect, join</td></tr>
+          <tr><td>THC, CBD (as product claims)</td><td>Industry, operators, companies</td></tr>
+          <tr><td>Get high, stoned, blazed</td><td><em>avoid entirely</em></td></tr>
+          <tr><td>Dispensary deals, discounts</td><td>Member benefits, networking</td></tr>
+          <tr><td>Any price tied to product</td><td><em>avoid entirely</em></td></tr>
+        </tbody>
+      </table>
+      <div class="callout green"><div class="icon">💡</div><div class="body"><p><strong>Rule of thumb:</strong> write as if you are promoting a <strong>business organization</strong>, not a product. The Chamber is a trade association, not a dispensary.</p></div></div>
+
+      <h2>What you CAN post</h2>
+      <ul>
+        <li>Chapter events (networking, education, panels)</li>
+        <li>Member spotlights (the person and the business, not the product)</li>
+        <li>Industry news and commentary</li>
+        <li>Advocacy and policy updates</li>
+        <li>Photos from events (people, venues, speakers)</li>
+        <li>Sponsor thank-yous (brand name and logo only, no product shots)</li>
+      </ul>
+
+      <h2>Caption templates</h2>
+
+      <h3>Event promo (pre-event)</h3>
+<pre>[Chapter] Chapter is hosting [event name] on [date] at [venue].
+
+Join us for [1-sentence value prop]. Expect [type of people] and
+[type of conversations].
+
+RSVP: [link]
+
+#CannabisIndustry #[City]Business #CannabisChamber</pre>
+
+      <h3>Event recap</h3>
+<pre>That's a wrap on [event name]. Thank you to everyone who came out,
+our speakers [names], and our sponsor [name] for making it possible.
+
+[1 sentence on what made it special]
+
+Next up: [next event or CTA]
+
+#CannabisIndustry #CannabisChamber</pre>
+
+      <h3>Member spotlight</h3>
+<pre>Member spotlight: [Name], [Title] at [Company].
+
+[1 to 2 sentences on what they do and why it matters to the industry.]
+
+Connect with [Name] at our next [Chapter] Chapter event.
+
+#CannabisChamber #MemberSpotlight</pre>
+
+      <h3>Sponsor thank-you</h3>
+<pre>Huge thanks to [Sponsor Name] for supporting the [Chapter] Chapter.
+
+[1 sentence on who they are and what they do.]
+
+Learn more about becoming a Chamber sponsor: [link]
+
+#CannabisChamber</pre>
+
+      <h2>Hashtag bank</h2>
+      <div class="callout green"><div class="icon">✅</div><div class="body">
+        <p><strong>Safe and evergreen:</strong></p>
+        <p><code>#CannabisIndustry</code> <code>#CannabisChamber</code> <code>#CannabisBusiness</code> <code>#LegalCannabis</code> <code>#CannabisNetworking</code> <code>#[City]Business</code> <code>#[State]Cannabis</code> <code>#CannabisCommunity</code> <code>#IndustryLeaders</code></p>
+      </div></div>
+      <div class="callout red"><div class="icon">❌</div><div class="body">
+        <p><strong>Avoid on Meta platforms:</strong></p>
+        <p><code>#marijuana</code> <code>#weed</code> <code>#420</code> <code>#stoner</code> <code>#high</code> and anything referencing consumption or product.</p>
+      </div></div>
+
+      <h2>Photo sharing SOP</h2>
+      <div class="callout blue"><div class="icon">📸</div><div class="body">
+        <p><strong>After every chapter event:</strong></p>
+        <ol>
+          <li>Upload raw photos to the shared drive: <em>[placeholder link]</em></li>
+          <li>Tag the folder with the event name and date</li>
+          <li>Flag 5 to 10 "hero shots" for HQ to reshare</li>
+          <li>Get verbal or written consent from anyone clearly identifiable</li>
+          <li>Do not post photos of anyone under 21, ever</li>
+        </ol>
+      </div></div>
+
+      <h2>Do's and Don'ts</h2>
+      <table>
+        <thead><tr><th>Do</th><th>Don't</th></tr></thead>
+        <tbody>
+          <tr><td>Tag @cannabischamber HQ account</td><td>Post product photos</td></tr>
+          <tr><td>Use "cannabis" not "marijuana"</td><td>Post prices or promote sales</td></tr>
+          <tr><td>Share speaker and attendee quotes</td><td>Post photos without consent</td></tr>
+          <tr><td>Repost HQ content to your chapter page</td><td>Make political endorsements</td></tr>
+          <tr><td>Focus on people and business</td><td>Use 420 or stoner hashtags</td></tr>
+          <tr><td>Write like a trade association</td><td>Write like a dispensary</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+      <h1>5. Event Playbook</h1>
+      <p class="lede">Checklists for running chapter events that deliver value.</p>
+
+      <div class="callout blue"><div class="icon">📅</div><div class="body"><p><strong>Your step-by-step for running chapter events that actually deliver value.</strong> Copy the checklists. Don't skip steps.</p></div></div>
+
+      <h2>Event types</h2>
+      <div class="callout purple"><div class="icon">🥂</div><div class="body"><p><strong>Networking mixer</strong> <em>(easiest to run).</em> 2 to 3 hours, venue with drinks, 30 to 80 people. No formal program. Low stress, high member value.</p></div></div>
+      <div class="callout purple"><div class="icon">🎤</div><div class="body"><p><strong>Educational panel.</strong> 90 minutes, 3 to 4 speakers, moderated Q&A, followed by networking. Higher prep, higher ceiling.</p></div></div>
+      <div class="callout purple"><div class="icon">🗣️</div><div class="body"><p><strong>Roundtable or working session.</strong> 60 to 90 minutes, 8 to 15 people, specific industry topic. Best for deep discussion and relationship-building.</p></div></div>
+      <div class="callout purple"><div class="icon">💻</div><div class="body"><p><strong>Virtual event.</strong> 45 to 60 minutes on Zoom, global audience. Fastest to organize, lowest cost.</p></div></div>
+
+      <h2>Pre-event checklist (4 to 6 weeks out)</h2>
+      <ul>
+        <li><input type="checkbox"> Pick date, format, and topic</li>
+        <li><input type="checkbox"> Confirm venue or virtual platform</li>
+        <li><input type="checkbox"> Log event in the Chamber Events database</li>
+        <li><input type="checkbox"> Confirm speakers or panelists (if applicable)</li>
+        <li><input type="checkbox"> Design event flyer</li>
+        <li><input type="checkbox"> Draft event description and RSVP copy</li>
+        <li><input type="checkbox"> Send first announcement to your member list</li>
+        <li><input type="checkbox"> Post first social announcement</li>
+        <li><input type="checkbox"> Notify HQ so they can amplify</li>
+      </ul>
+
+      <h2>2 weeks out</h2>
+      <ul>
+        <li><input type="checkbox"> Second social push</li>
+        <li><input type="checkbox"> Direct outreach to target attendees</li>
+        <li><input type="checkbox"> Confirm speaker logistics (travel, bios, headshots)</li>
+        <li><input type="checkbox"> Confirm catering or venue details</li>
+        <li><input type="checkbox"> Create attendee list / RSVP tracker</li>
+      </ul>
+
+      <h2>1 week out</h2>
+      <ul>
+        <li><input type="checkbox"> Final reminder email to RSVPs</li>
+        <li><input type="checkbox"> Final social push with "last chance to RSVP" angle</li>
+        <li><input type="checkbox"> Confirm run-of-show with venue and speakers</li>
+        <li><input type="checkbox"> Print name badges (if in-person)</li>
+        <li><input type="checkbox"> Assign a photographer</li>
+      </ul>
+
+      <h2>Day-of checklist</h2>
+      <div class="callout red"><div class="icon">⏰</div><div class="body"><p><strong>Arrive early. Always.</strong></p></div></div>
+      <ul>
+        <li><input type="checkbox"> Arrive 60 to 90 minutes early</li>
+        <li><input type="checkbox"> Set up signage and brand materials</li>
+        <li><input type="checkbox"> Test AV (mics, slides, speakers)</li>
+        <li><input type="checkbox"> Brief speakers on timing and format</li>
+        <li><input type="checkbox"> Greet first attendees personally</li>
+        <li><input type="checkbox"> Take photos: venue, signage, crowd, speakers, candid networking</li>
+        <li><input type="checkbox"> Capture 1 to 2 short video clips for social</li>
+        <li><input type="checkbox"> Open with a 2-minute Chamber intro</li>
+        <li><input type="checkbox"> Close with next event announcement and CTA to join</li>
+      </ul>
+
+      <h2>Post-event checklist (within 48 hours)</h2>
+      <ul>
+        <li><input type="checkbox"> Upload photos to shared drive</li>
+        <li><input type="checkbox"> Post event recap on social</li>
+        <li><input type="checkbox"> Send thank-you email to attendees and speakers</li>
+        <li><input type="checkbox"> Send sponsor thank-you (if applicable)</li>
+        <li><input type="checkbox"> Update Chamber Events database with final count and notes</li>
+        <li><input type="checkbox"> Send short recap to HQ (1 paragraph + 3 photos)</li>
+        <li><input type="checkbox"> Note lessons learned for the next event</li>
+      </ul>
+
+      <h2>Promotion timeline</h2>
+      <table>
+        <thead><tr><th>Week</th><th>Action</th><th>Channel</th></tr></thead>
+        <tbody>
+          <tr><td>-6</td><td>First announcement</td><td>Email + social</td></tr>
+          <tr><td>-4</td><td>Speaker reveal</td><td>Social</td></tr>
+          <tr><td>-3</td><td>Member-only early access</td><td>Email</td></tr>
+          <tr><td>-2</td><td>Second social push + DM outreach</td><td>Social + DMs</td></tr>
+          <tr><td>-1</td><td>Final reminder + last-chance RSVP</td><td>Email + social</td></tr>
+          <tr><td>0</td><td>Event day: live posts</td><td>Stories</td></tr>
+          <tr><td>+1</td><td>Recap post + photos</td><td>Social + email</td></tr>
+          <tr><td>+2</td><td>Thank-you post to speakers and sponsors</td><td>Social</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Budget guidance</h2>
+      <div class="callout yellow"><div class="icon">💰</div><div class="body">
+        <p><strong>Volunteer chapters are not expected to fund events out of pocket.</strong></p>
+        <ul>
+          <li>Small mixers: aim for venue comps or low-cost partner venues</li>
+          <li>Panels and larger events: work with HQ to identify a sponsor</li>
+          <li>Any expense above <em>[threshold placeholder]</em> must be pre-approved by HQ</li>
+          <li>Submit reimbursement requests within 30 days of the event</li>
+        </ul>
+      </div></div>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news">
+      <h1>6. News & Media Library</h1>
+      <p class="lede">Coming soon.</p>
+
+      <div class="callout yellow"><div class="icon">🚧</div><div class="body"><p><strong>Coming soon.</strong> This page will be the shared library for chapter updates, press mentions, event photos, and speaker clips. HQ is building it out over the next quarter.</p></div></div>
+
+      <h2>What will live here</h2>
+      <ul>
+        <li><strong>Chapter updates:</strong> short monthly notes from each chapter lead</li>
+        <li><strong>Press mentions:</strong> articles, podcasts, and interviews featuring the Chamber</li>
+        <li><strong>Photo library:</strong> searchable archive of event photos organized by chapter and date</li>
+        <li><strong>Speaker clips:</strong> short video cuts from panels and talks</li>
+        <li><strong>Member news:</strong> funding announcements, launches, and wins worth celebrating</li>
+      </ul>
+
+      <h2>In the meantime</h2>
+      <div class="callout blue"><div class="icon">📬</div><div class="body">
+        <p><strong>Submit chapter news to HQ.</strong> Email <em>[HQ email placeholder]</em> with:</p>
+        <ul>
+          <li>A short paragraph (3 to 5 sentences)</li>
+          <li>1 to 3 photos (high resolution)</li>
+          <li>Links to any press or social posts</li>
+        </ul>
+        <p>HQ will compile submissions into a monthly roundup and share across channels.</p>
+      </div></div>
+
+      <div class="callout red"><div class="icon">⚠️</div><div class="body"><p><strong>This page is a placeholder.</strong> If you need something urgently (press inquiry, photo request, speaker quote), contact HQ directly.</p></div></div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const links = document.querySelectorAll('[data-section]');
+  function show(id) {
+    sections.forEach(s => s.classList.toggle('active', s.id === id));
+    document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('active', a.dataset.section === id));
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+  }
+  links.forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    show(a.dataset.section);
+  }));
+  const initial = location.hash.replace('#', '') || 'home';
+  show(initial);
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.DS_Store
+.vscode/
+.idea/
+node_modules/
+*.log
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# OS cruft
+Thumbs.db
