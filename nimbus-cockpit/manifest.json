@@ -1,0 +1,9 @@
+{
+  "name": "Nimbus Cockpit",
+  "short_name": "Nimbus",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#10161d",
+  "theme_color": "#10161d",
+  "icons": []
+}

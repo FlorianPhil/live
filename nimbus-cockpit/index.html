@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10161d">
+  <title>Nimbus Cockpit</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23081218'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%2308d7e8'/%3E%3Cpath d='M32 14v22' stroke='%23081218' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cockpit" data-mode="cruise">
+    <canvas id="space" class="space" aria-hidden="true"></canvas>
+
+    <section class="start" id="start">
+      <div class="start-orbit" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <button id="startButton" class="start-button" type="button">
+          <i></i>
+        </button>
+      </div>
+      <p class="kicker">Nimbus family cockpit</p>
+      <h1>Ready the bridge.</h1>
+      <p class="start-copy">Crew seats locked. Tap the core when the route is clear.</p>
+      <p id="startStatus" class="start-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="bridge" id="bridge" hidden>
+      <header class="topbar">
+        <div>
+          <p class="kicker">S.S. Nimbus</p>
+          <h1 id="modeTitle">Cruise deck</h1>
+        </div>
+        <button id="mute" class="pill" type="button" aria-pressed="false" aria-label="Mute audio">Audio on</button>
+      </header>
+
+      <section class="viewport" aria-label="Forward viewport">
+        <div class="glass-lines" aria-hidden="true"></div>
+        <div class="horizon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="target-ring" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </div>
+        <div class="ship-readout">
+          <span id="eventTag">Bridge quiet</span>
+          <strong id="eventText">Choose a mode, then launch a mission event.</strong>
+        </div>
+      </section>
+
+      <nav class="modes" id="modes" aria-label="Flight modes">
+        <button class="mode active" data-mode="cruise" type="button">
+          <span>01</span>
+          <strong>Cruise</strong>
+          <small>deep space</small>
+        </button>
+        <button class="mode" data-mode="combat" type="button">
+          <span>02</span>
+          <strong>Combat</strong>
+          <small>boss fight</small>
+        </button>
+        <button class="mode" data-mode="stealth" type="button">
+          <span>03</span>
+          <strong>Stealth</strong>
+          <small>silent run</small>
+        </button>
+        <button class="mode" data-mode="warp" type="button">
+          <span>04</span>
+          <strong>Warp</strong>
+          <small>jump lane</small>
+        </button>
+      </nav>
+
+      <section class="instrument signal">
+        <div class="instrument-head">
+          <div>
+            <p class="kicker">Distress array</p>
+            <h2>Triangulate signal</h2>
+          </div>
+          <button id="signalPower" class="pill small" type="button" aria-pressed="false">Array off</button>
+        </div>
+        <div id="signalPad" class="signal-pad" role="slider" aria-label="Signal effects pad" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <canvas id="signalScope" aria-hidden="true"></canvas>
+          <div class="grid-lines" aria-hidden="true"></div>
+          <div id="signalDot" class="signal-dot" aria-hidden="true"></div>
+          <span class="axis x">delay</span>
+          <span class="axis y">crush</span>
+        </div>
+      </section>
+
+      <section class="systems">
+        <button class="system-toggle" data-toggle="engine" type="button">
+          <span>Engine</span>
+          <i></i>
+        </button>
+        <button class="system-toggle" data-toggle="shield" type="button">
+          <span>Shields</span>
+          <i></i>
+        </button>
+        <button class="system-toggle" data-toggle="telemetry" type="button">
+          <span>Telemetry</span>
+          <i></i>
+        </button>
+      </section>
+
+      <section class="actions" aria-label="Cockpit actions">
+        <button class="action big" data-shot="thruster" type="button">
+          <span>Burn</span>
+          <strong>Thruster</strong>
+        </button>
+        <button class="action" data-shot="laser" type="button">
+          <span>Pulse</span>
+          <strong>Laser</strong>
+        </button>
+        <button class="action" data-shot="torpedo" type="button">
+          <span>Volley</span>
+          <strong>Torpedo</strong>
+        </button>
+        <button class="action" data-shot="dock" type="button">
+          <span>Clamp</span>
+          <strong>Dock</strong>
+        </button>
+      </section>
+
+      <section class="mission">
+        <button id="eventButton" class="mission-button" type="button">
+          <span>Mission event</span>
+          <strong>Generate</strong>
+        </button>
+        <button id="jumpButton" class="jump-button" type="button">
+          <span>Warp window</span>
+          <strong>Jump</strong>
+        </button>
+      </section>
+
+      <footer class="mix">
+        <label>
+          <span>Music</span>
+          <input id="musicLevel" type="range" min="0" max="1" step="0.01" value="0.42">
+        </label>
+        <label>
+          <span>Effects</span>
+          <input id="fxLevel" type="range" min="0" max="1" step="0.01" value="0.78">
+        </label>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/gsap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
