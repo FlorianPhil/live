@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simplified equirectangular world land outline. viewBox 0 0 1000 500,
+     standard Atlantic-centered (lon 0 at x=500, lon -180 at x=0).
+     Hand-simplified continent silhouettes, recognizable at small scale, light
+     grey fill, no detail coastline. The deck's map slide inlines this same path
+     and re-centers it on the Pacific (165E) by drawing the group twice with a
+     horizontal shift, so the Europe -> Asia -> California route reads left to
+     right. Keep this file in sync with WORLD_PATH in deck.js. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <g class="world-land" fill="#EBEBF0" stroke="#DCDCE6" stroke-width="0.6">
+    <!-- North America -->
+    <path d="M120,66 L175,58 L225,52 L268,58 L262,76 L300,82 L330,104 L352,126 L334,138 L348,158 L326,164 L300,150 L286,166 L268,150 L248,160 L232,150 L214,168 L200,150 L182,166 L168,150 L150,160 L140,140 L120,130 L138,116 L116,108 L140,98 L112,100 L92,92 L106,76 Z"/>
+    <!-- Greenland -->
+    <path d="M372,44 L410,38 L438,50 L432,72 L444,92 L416,104 L398,86 L384,96 L374,76 L388,60 Z"/>
+    <!-- Central America -->
+    <path d="M286,196 L312,192 L330,208 L352,232 L368,258 L360,266 L342,244 L322,224 L302,210 L288,202 Z"/>
+    <!-- South America -->
+    <path d="M352,270 L378,262 L398,274 L410,298 L404,322 L416,338 L406,366 L390,398 L374,430 L360,452 L348,444 L352,410 L342,378 L334,346 L326,314 L336,288 Z"/>
+    <!-- UK and Ireland -->
+    <path d="M458,98 L470,90 L468,106 L456,114 L450,102 Z"/>
+    <!-- Scandinavia -->
+    <path d="M506,66 L524,54 L538,64 L530,84 L544,94 L524,100 L516,84 L522,72 Z"/>
+    <!-- Europe -->
+    <path d="M474,104 L494,96 L508,104 L504,114 L522,112 L532,124 L516,132 L530,140 L508,148 L490,140 L478,150 L470,134 L484,124 L472,116 L484,110 Z"/>
+    <!-- Africa -->
+    <path d="M484,156 L520,150 L560,154 L588,168 L598,196 L612,214 L606,246 L590,280 L572,310 L554,330 L538,338 L524,324 L514,296 L502,268 L494,238 L488,208 L482,180 L482,164 Z"/>
+    <!-- Arabia -->
+    <path d="M598,170 L628,168 L648,184 L640,210 L620,218 L606,198 L596,182 Z"/>
+    <!-- Eurasia main mass -->
+    <path d="M526,98 L566,86 L612,84 L668,88 L724,90 L784,94 L842,98 L888,108 L912,124 L890,136 L914,150 L884,158 L902,172 L868,178 L848,166 L826,176 L804,164 L782,176 L760,162 L734,176 L712,160 L688,172 L668,156 L646,150 L620,140 L596,146 L572,132 L548,128 L534,114 Z"/>
+    <!-- India -->
+    <path d="M688,176 L718,170 L734,186 L730,212 L716,238 L704,216 L694,194 Z"/>
+    <!-- SE Asia peninsula -->
+    <path d="M772,182 L798,180 L808,200 L800,224 L788,214 L780,196 Z"/>
+    <!-- Indonesia -->
+    <path d="M792,234 L834,228 L872,234 L856,250 L816,248 L790,246 Z"/>
+    <!-- Japan -->
+    <path d="M898,138 L912,128 L918,148 L906,170 L894,156 L900,146 Z"/>
+    <!-- Australia -->
+    <path d="M832,300 L876,290 L918,300 L934,324 L922,352 L890,366 L856,356 L838,334 L826,312 Z"/>
+    <!-- New Zealand -->
+    <path d="M950,360 L962,352 L966,372 L954,386 L946,370 Z"/>
+  </g>
+</svg>

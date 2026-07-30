@@ -1,0 +1,367 @@
+{
+  "meta": {
+    "title": "Career Exploration",
+    "subtitle": "Guest speaker session for Top Scholar",
+    "event": "Top Scholar College Prep, Career Exploration Guest Speaker",
+    "audience": "Grades 7-12",
+    "date": "Tuesday, June 9, 2026",
+    "time": "1:00 PM",
+    "location": "Top Scholar at Tailored Space, Suite 240, Chino Hills, CA",
+    "speaker": "Florian Philippe",
+    "speaker_title": "Brand Strategist",
+    "speaker_site": "florianp.com",
+    "duration_minutes": 60,
+    "format": "Presentation 30 to 45 minutes, Q&A 15 to 30 minutes (per the Top Scholar guest-speaker guidelines).",
+    "run_of_show": [
+      "0:00 to 0:04  Self-introduction and room check (slides 1, 2)",
+      "0:04 to 0:12  Education, training, and the places I lived (slides 3, 4)",
+      "0:12 to 0:22  My career journey and what I do day to day (slides 5, 6, 7)",
+      "0:22 to 0:30  Skills and the biggest thing I learned (slides 8, 9)",
+      "0:30 to 0:38  Advice and reflection questions (slides 10, 11)",
+      "0:38 to 1:00  Questions and answers (slide 12)"
+    ],
+    "qa_seeds": [
+      "What did you think you wanted to do when you were our age?",
+      "Why did you study business?",
+      "How did you start working in other countries?",
+      "What does a normal day look like?",
+      "What was the hardest part of working for yourself?",
+      "How do you find clients?",
+      "What makes someone good at this kind of work?",
+      "How is AI changing creative and marketing careers?",
+      "What should I start doing now if I do not know my career yet?"
+    ],
+    "sources": [
+      "Top Scholar Career Exploration Guest Speaker PDF (Amy)",
+      "Florian Philippe LinkedIn (career history, read 2026-06-08)",
+      "T-147 capture/privacy limits",
+      "brand-os/brands/fp/IDENTITY.md"
+    ],
+    "privacy": "Per T-147: social sharing allowed, but no student faces or names in any photo or video. This deck shows no photos of people; visuals are on-brand generated still lifes plus a code-built map and timeline. Zero student data.",
+    "build_notes": "Image-forward keynote following the Top Scholar PDF five sections. cover = full-bleed image with light scrim + dark text + Ken Burns; split = text plus a framed image; map and timeline are code. Plain titles, first person, no photos of people, no inspirational filler. Generated images: subject-mode (concrete/glass/metal/stone, restrained purple), no text/people/logos."
+  },
+  "slides": [
+    {
+      "id": "event",
+      "type": "event",
+      "logo": "assets/img/top-scholar-logo.png",
+      "logoText": "TOP SCHOLAR COLLEGE PREP",
+      "eyebrow": "SUMMER CAREER EXPLORATION CAMP · GRADES 7-12",
+      "headline": "CAREER EXPLORATION",
+      "highlight": "EXPLORATION",
+      "meta": [
+        "Tuesday, June 9, 2026 · 1:00 PM",
+        "Chino Hills, California"
+      ],
+      "timing": "holding slide as students arrive",
+      "notes": "Event title slide, host branded. Top Scholar logo, the session topic, and the date. Leave it up as students come in, then advance to your intro.",
+      "source": ["Amy PDF"]
+    },
+    {
+      "id": "personal",
+      "type": "moodboard",
+      "eyebrow": "A LITTLE ABOUT ME",
+      "headline": "I LIKE TOO MANY THINGS",
+      "highlight": "MANY",
+      "lead": "Two sons. Snowboards. Strategy and simulation games. A lot of music. I have lived in six countries. Mostly I just kept following what I was curious about.",
+      "tiles": [
+        { "src": "assets/img/personal-sons.jpg", "alt": "Florian with his two sons" },
+        { "src": "assets/img/personal-snowboard.jpg", "alt": "Florian snowboarding" },
+        { "src": "assets/img/personal-music.jpg", "alt": "Florian playing guitar on stage" },
+        { "src": "assets/img/personal-travel.jpg", "alt": "Florian traveling in Asia" },
+        { "src": "assets/img/personal-games.jpg", "alt": "Game controllers, old and new" },
+        { "src": "assets/img/personal-friends.jpg", "alt": "Florian with friends at a meetup" }
+      ],
+      "timing": "0:00 to 0:03",
+      "notes": "Personal intro, lead human not professional. Hobbies: snowboard, strategy and simulation games, music. Two sons. Six countries lived (the personal angle, not the work one). Four tiles are placeholders until real photos are dropped in.",
+      "source": ["Florian"]
+    },
+    {
+      "id": "map",
+      "type": "map",
+      "eyebrow": "WHERE I HAVE LIVED AND WORKED",
+      "headline": "SIX PLACES THAT SHAPED ME",
+      "highlight": "SIX",
+      "lead": "I grew up in France, then kept moving.",
+      "places": [
+        { "place": "France", "tag": "Home and business school", "year": "2012", "coords": [48.85, 2.35] },
+        { "place": "Leicester, UK", "tag": "Internship", "year": "2012", "coords": [52.63, -1.13] },
+        { "place": "Shanghai, China", "tag": "Internship", "year": "2013", "coords": [31.23, 121.47] },
+        { "place": "Hanoi, Vietnam", "tag": "First real jobs", "year": "2013", "coords": [21.03, 105.85] },
+        { "place": "Taipei, Taiwan", "tag": "Built my own studio", "year": "2016", "coords": [25.03, 121.57] },
+        { "place": "California, USA", "tag": "Where I am now", "year": "2020", "coords": [34.05, -118.24] }
+      ],
+      "timing": "between personal and work intro",
+      "notes": "Career overview shown as a world map with the route drawn city to city. Sits between the personal intro and the work intro because the places shaped me.",
+      "source": ["LinkedIn"]
+    },
+    {
+      "id": "intro",
+      "type": "statement",
+      "layout": "split",
+      "image": { "src": "assets/img/intro-touchpoints.jpg", "alt": "Florian presenting in front of a Brand Touchpoints diagram." },
+      "eyebrow": "AND THE WORK PART",
+      "headline": "BRAND STRATEGIST",
+      "highlight": "BRAND",
+      "lead": "I'm Florian Philippe. I help people and companies figure out what they really do, and say it clearly.",
+      "timing": "0:00 to 0:04",
+      "notes": "Section 1, self-introduction (PDF 1a, 1b). Name, title, one plain sentence on what you do. Company profile: your own brand strategy practice, working with founders and companies internationally, based in California. About a minute.",
+      "source": ["Amy PDF"]
+    },
+    {
+      "id": "room-check",
+      "type": "prompt",
+      "accent": true,
+      "eyebrow": "QUICK SHOW OF HANDS",
+      "headline": "WHERE ARE YOU RIGHT NOW?",
+      "highlight": "NOW",
+      "lead": "Both answers are completely fine. Most useful careers get built by people who started in the second group.",
+      "interaction": [
+        "How many of you already know what career you want?",
+        "How many of you are still figuring it out?"
+      ],
+      "timing": "inside the opening",
+      "notes": "Participation (PDF: encourage curiosity, questions, participation). Real show of hands. If recording, frame on yourself and the slides only, never students (T-147).",
+      "source": ["Amy PDF"]
+    },
+    {
+      "id": "education",
+      "type": "split",
+      "layout": "split",
+      "image": { "src": "assets/img/img-edu.png", "alt": "A tidy still life of well-made objects and a notebook on concrete." },
+      "eyebrow": "2 / EDUCATION AND TRAINING",
+      "headline": "HOW I PREPARED",
+      "highlight": "PREPARED",
+      "lead": "I studied business and entrepreneurship in Le Mans, France, then took internships in the UK and in China. I found this work by trying things.",
+      "columns": [
+        { "label": "What I studied", "items": ["Science and math track, French baccalaureate", "Business and entrepreneurship", "Le Mans, France, 2012"] },
+        { "label": "Where I trained", "items": ["Internship in Leicester, UK", "Internship in Shanghai, China"] }
+      ],
+      "timing": "0:04 to 0:12",
+      "notes": "Section 2 (PDF 2a, 2b, 2c). How I discovered it: curiosity and internships, not a plan. How I prepared: business school plus internships abroad. Keep it factual.",
+      "source": ["LinkedIn"]
+    },
+    {
+      "id": "timeline",
+      "type": "timeline",
+      "eyebrow": "3 / MY CAREER JOURNEY",
+      "headline": "THE JOBS I HAVE HAD",
+      "highlight": "JOBS",
+      "lead": "None of these were on a list when I started. Looking back, they connect.",
+      "roles": [
+        { "year": "2012", "role": "Freelance web designer and musician", "place": "" },
+        { "year": "2013", "role": "Web designer", "place": "Vietnam" },
+        { "year": "2014", "role": "Marketing manager, six months", "place": "Vietnam" },
+        { "year": "2015", "role": "Digital marketing for a French hat maker", "place": "" },
+        { "year": "2016", "role": "Started my own brand studio", "place": "Taiwan" },
+        { "year": "2020", "role": "Brand and strategy director", "place": "California" },
+        { "year": "2022", "role": "Brand manager at a solar company", "place": "California" },
+        { "year": "2024", "role": "Chief Marketing Officer", "place": "California" },
+        { "year": "2026", "role": "Brand Therapist", "place": "Global" }
+      ],
+      "projectsLabel": "Things I started on the side",
+      "projects": [
+        { "name": "Backing tracks for musicians", "year": "2014", "made": "$0" },
+        { "name": "NFC business cards", "year": "2018", "made": "$0" },
+        { "name": "A brand for accountants", "year": "2025", "made": "$0" }
+      ],
+      "timing": "0:12 to 0:22",
+      "notes": "Section 3, career journey (PDF 3). Left = the jobs, including the six-month Vietnam marketing manager role I hated but learned from. Right = side projects, each $0 (talk through the point out loud, the slide just shows the zeros): backing tracks for musicians (2014); NFC business cards (2018, people asked me to make them, I didn't believe in it, startups raised millions later); finding my own clients (2025, the consulting was fine, the marketing of it flopped, zero leads). The $0 is the motivational point: trying and failing is normal and fine.",
+      "source": ["LinkedIn", "Florian"]
+    },
+    {
+      "id": "day-to-day",
+      "type": "statement",
+      "layout": "split",
+      "image": { "src": "assets/img/florian-speaking-abaie-branding.jpg", "alt": "Florian Philippe presenting at the front of a room, beside a projected slide." },
+      "eyebrow": "A NORMAL DAY",
+      "headline": "WHAT I ACTUALLY DO",
+      "highlight": "ACTUALLY",
+      "lead": "A brand strategist helps people and companies say what they do clearly. A normal day:",
+      "examples": [
+        "Talk to a founder about what they actually do.",
+        "Find the one true sentence that explains them.",
+        "Cut everything that is not that."
+      ],
+      "point": "Most businesses do not have a design problem first. They have a clarity problem.",
+      "timing": "inside section 3",
+      "notes": "Day-to-day responsibilities (PDF 3a). Concrete: this answers what you do all day.",
+      "source": ["BIO.md"]
+    },
+    {
+      "id": "work-look",
+      "type": "statement",
+      "eyebrow": "WHAT THE WORK LOOKS LIKE",
+      "headline": "I SIT ON THE CREATIVE SIDE",
+      "highlight": "CREATIVE",
+      "lead": "Brand strategy is a wide job, done many different ways. Mine leans creative, closer to a designer than a marketer.",
+      "examples": [
+        "Most marketing work is ads, sales, or operations.",
+        "I work on identity, message, and how a brand looks and sounds.",
+        "Same field, very different days."
+      ],
+      "timing": "inside the work block",
+      "notes": "Company info, what the work is actually like (PDF). Position on the creative/design side so the marketing and sales students do not get the wrong impression. Brand strategy is done many ways; yours is one specific, creative version. Takeaway: find your own version, do not copy mine.",
+      "source": ["Florian"]
+    },
+    {
+      "id": "marketing-world",
+      "type": "diagram",
+      "eyebrow": "THE WORLD I WORK IN",
+      "headline": "WHERE A BRAND STRATEGIST SITS",
+      "highlight": "SITS",
+      "lead": "Modern marketing is really four kinds of people in one room. My job is to move between them and keep the work pointing the same way.",
+      "nodes": [
+        { "label": "Creative", "desc": "Designers, writers, directors" },
+        { "label": "Strategy", "desc": "Positioning and brand" },
+        { "label": "Data", "desc": "Research, analytics, testing" },
+        { "label": "AI", "desc": "New tools, faster production" }
+      ],
+      "spanLabel": "Brand strategist",
+      "spanDesc": "I move across all four and keep them pointing the same way.",
+      "timing": "inside the work block",
+      "notes": "The marketing world as Florian sees it: creative, strategy, data, AI people. He is the connector who moves between them. Use to show students the field is bigger and more visual than they think, and there is a place in it for many kinds of person.",
+      "source": ["Florian"]
+    },
+    {
+      "id": "portfolio",
+      "type": "brands",
+      "eyebrow": "A LITTLE OF THE WORK",
+      "headline": "BRANDS I HELPED BUILD",
+      "highlight": "BUILD",
+      "lead": "Startups, trade shows, founders, and a Beverly Hills firm.",
+      "brands": [
+        "StarVR", "TaiSPO", "Taipei Cycle", "TAITRA", "FutureWard",
+        "SIEPEL", "Medicare Taiwan", "Céline Robert", "bluescan", "SmartBiz", "speechpod",
+        "Cachet Advisory", "Verdant", "Cannabis Chamber", "Adam Freed", "KC Santana", "Samah Afifi",
+        "EBA Taiwan"
+      ],
+      "timing": "inside the work block",
+      "notes": "Client roster instead of mockups (no good mockup images to source in time). Real names: 3 Angles Taipei studio (StarVR, TaiSPO, Taipei Cycle, TAITRA, FutureWard, SIEPEL, Céline Robert, bluescan, SmartBiz, speechpod) plus recent US work (Cachet Advisory, Verdant, Cannabis Chamber, Adam Freed, KC Santana, Samah Afifi). Acer left off on purpose (only the invoicing entity for a StarVR-startup dashboard, not their brand). Florian to add any missing to reach 25-30.",
+      "source": ["Florian", "3angles.consulting"]
+    },
+    {
+      "id": "hard",
+      "type": "statement",
+      "layout": "cover",
+      "image": { "src": "assets/img/img-hard.png", "alt": "A rough stone block with one polished facet revealing a purple crystal." },
+      "eyebrow": "STARTING OUT, AND WHAT WAS HARD",
+      "headline": "SOME OF IT WAS HARD",
+      "highlight": "HARD",
+      "lead": "The early years were not glamorous.",
+      "examples": [
+        "Moving to new countries where I knew no one.",
+        "Freelancing in Vietnam with very little money.",
+        "Learning by getting things wrong with real clients first."
+      ],
+      "point": "None of it felt like a plan at the time.",
+      "timing": "inside section 3",
+      "notes": "What it was like starting and professional challenges (PDF 3b, 3c). Be honest, not a lecture.",
+      "source": ["BIO.md"]
+    },
+    {
+      "id": "skills",
+      "type": "grid",
+      "eyebrow": "SKILLS THIS WORK NEEDS",
+      "headline": "SKILLS THAT HELP IN ALMOST ANY CAREER",
+      "highlight": "ANY",
+      "skills": [
+        "Making friends",
+        "Asking stupid questions",
+        "Doing what nobody else does",
+        "Noticing what others miss",
+        "Using tools without becoming the tool"
+      ],
+      "timing": "0:22 to 0:30",
+      "notes": "Skills in Florian's voice (PDF 2c). MAKING FRIENDS: the network you build from high school on, friends in many countries, referrals run both ways; don't be afraid to mix the professional and the personal, the job lasts a few years but the friendship can last forever. ASKING STUPID QUESTIONS: the ones everyone is too scared to ask, usually half the room did not know either, and it is devil's advocate. DOING WHAT NOBODY ELSE DOES: 'It is not that hard to be number one. You just have to find something nobody else does.' (Generalist by nature, envies deep specialists, the resolution is finding your own lane.) Prompt: one skill you could practice this summer that helps in more than one career?",
+      "source": ["BIO.md", "Florian"]
+    },
+    {
+      "id": "lesson",
+      "type": "statement",
+      "layout": "cover",
+      "image": { "src": "assets/img/img-story.png", "alt": "A precisely machined metal piece on concrete with a purple sheen." },
+      "eyebrow": "THE BIGGEST THING I LEARNED",
+      "headline": "GOOD WORK IS NOT ENOUGH",
+      "highlight": "ENOUGH",
+      "lead": "For years I believed good work would speak for itself. It does not. The most talented people I know stay best-kept secrets, waiting to be discovered.",
+      "point": "What makes you special is showing up and showing the work. Even more now that AI can fake the result in seconds.",
+      "timing": "inside section 3 lessons",
+      "notes": "The biggest lesson, deliver it big. Best-kept-secrets: most talented people are waiting to be discovered, like actors waiting for a break. The crush line lands with teens (a client, a promotion, your crush: standing there doing good work and looking nice is not enough, people expect more). The bag example for perception. We all want to feel special; the thing that makes us special is what we do constantly, and that we show up and show it. Tie to AI: it can fake the finished product in seconds, so the showing-up matters more, not less.",
+      "source": ["Florian, 2026-06-08"]
+    },
+    {
+      "id": "cause",
+      "type": "prompt",
+      "eyebrow": "FIND YOUR WHY",
+      "headline": "FIND A CAUSE, NOT (JUST) A PURPOSE",
+      "highlight": "CAUSE",
+      "lead": "A purpose is heavy and lonely. A cause is something you can join. Three ways in:",
+      "interaction": [
+        "What are you proud of?",
+        "What motivates you?",
+        "What impact do you want to make in your community?"
+      ],
+      "timing": "0:30 to 0:38",
+      "notes": "Cause and reflection combined. Reframe out loud: everyone is told to find a unique purpose, and that pressure freezes them, because it is hard to be that unique. A cause is lighter, you find and join it. Florian's own: help every business feel like no other, glad when anyone gets there. Then the three PDF questions (4b) as the way in, read slowly, invite a couple to share.",
+      "source": ["Florian", "Amy PDF"]
+    },
+    {
+      "id": "advice",
+      "type": "statement",
+      "eyebrow": "4 / ADVICE FOR MY YOUNGER SELF",
+      "headline": "WHICH ONE ARE YOU?",
+      "highlight": "ONE",
+      "lead": "Put a team in a room and each person quietly protects something different:",
+      "examples": [
+        "That everyone is heard",
+        "That it actually gets done",
+        "That it stays organized",
+        "That nothing goes wrong",
+        "That it looks beautiful (me)"
+      ],
+      "point": "Notice which one is you. It is the first clue to what you are good at.",
+      "timing": "0:30 to 0:38",
+      "notes": "Specialist vs generalist did not land; this is the better version. In any team people protect different things, often regardless of title: being heard and included, getting it done, keeping order, keeping it safe, making it beautiful (that is me). Have them notice their own default, what they reach for at play, the games they like, when they hit flow. That orientation is the first signal of where they fit. Speak it; the slide just lists the types.",
+      "source": ["Florian"]
+    },
+    {
+      "id": "questions",
+      "type": "close",
+      "eyebrow": "5 / QUESTIONS AND ANSWERS",
+      "headline": "QUESTIONS FOR EACH OTHER",
+      "highlight": "EACH",
+      "lead": "Your turn. Ask me anything.",
+      "prompts": [
+        "What career are you curious about, even if you are not sure?",
+        "What kind of work makes time pass quickly for you?",
+        "What is one problem you wish someone would solve?",
+        "What is one thing you could go try this summer?"
+      ],
+      "thanks": "Thank you, Top Scholar.",
+      "timing": "0:38 to 1:00 (Q&A)",
+      "notes": "Q&A, 15 to 30 minutes (PDF 5: presenter and students ask each other). Protect this time. Q&A seeds are in this panel.",
+      "source": ["Amy PDF"]
+    },
+    {
+      "id": "books",
+      "type": "statement",
+      "layout": "split",
+      "image": { "src": "assets/img/books-qr.png", "alt": "QR code linking to florianp.com/me" },
+      "eyebrow": "IF YOU WANT TO GO DEEPER",
+      "headline": "FOUR BOOKS I RECOMMEND",
+      "highlight": "FOUR",
+      "lead": "Four that changed how I think about work and brands.",
+      "examples": [
+        "Show Your Work · Austin Kleon",
+        "Start With Why · Simon Sinek",
+        "Grit · Angela Duckworth",
+        "The Culture Code · Clotaire Rapaille"
+      ],
+      "point": "Want to shadow or help out? I could use a hand with social media.",
+      "timing": "closing takeaway",
+      "notes": "Recommended reading plus a QR to connect. QR is a PLACEHOLDER. Florian is building a dedicated link page. Replace assets/img/books-qr.png with the real QR once the page URL is live. Books: Show Your Work (Austin Kleon), Start With Why (Simon Sinek), Grit (Angela Duckworth), The Culture Code (Clotaire Rapaille, the branding one).",
+      "source": ["Florian"]
+    }
+  ]
+}
