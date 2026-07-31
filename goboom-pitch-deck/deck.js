@@ -572,8 +572,10 @@
       d.setAttribute("aria-current", on ? "true" : "false");
     });
     const s = slidesData[i];
-    const dark = s && (s.theme === "dark" || s.theme === "orange" || s.type === "title");
-    document.body.classList.toggle("on-light", !dark);
+    const theme = s && (s.type === "title" ? "dark" : (s.theme || "light"));
+    document.body.classList.toggle("on-light", theme !== "dark" && theme !== "orange");
+    document.body.classList.toggle("on-orange", theme === "orange");
+    document.body.classList.toggle("on-dark", theme === "dark" || s.type === "title");
     deck.style.background = "#0A0A0A";
     if (history.replaceState) history.replaceState(null, "", "#" + slidesData[i].id);
     updateProgress();

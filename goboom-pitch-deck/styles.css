@@ -647,9 +647,11 @@ body.on-light .fs-btn {
 .hint {
   position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%);
   z-index: 30; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(255,255,255,0.35); font-weight: 500; transition: opacity 0.3s;
+  color: rgba(255,255,255,0.4); font-weight: 500; transition: opacity 0.3s, color 0.3s;
   pointer-events: none;
 }
+body.on-light .hint { color: rgba(5,5,5,0.45); }
+body.on-orange .hint { color: rgba(5,5,5,0.55); }
 
 html[lang="zh"] .headline { letter-spacing: 0.02em; }
 html[lang="zh"] .lead { font-size: 20px; line-height: 1.55; }
