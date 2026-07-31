@@ -29,3 +29,9 @@ Refresh the browser after saving.
 
 Dragon Orange `#FF841A` · Black `#050505` · Barlow Condensed + Barlow  
 Official Go Boom logo asset on title (stacked mark — GO is intentionally shorter than BOOM) · Novium case study only
+
+## Downloads
+
+- Deck zip: https://florianphil.github.io/live/goboom-pitch-deck.zip
+- V2 cinematic: https://florianphil.github.io/live/goboom-pitch-deck-v2/
+- V2 zip: https://florianphil.github.io/live/goboom-pitch-deck-v2.zip
