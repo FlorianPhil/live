@@ -130,7 +130,7 @@ body.on-light .fs-btn {
   pointer-events: none;
 }
 .slide.dark .slide-foot { color: rgba(255,255,255,0.35); }
-.slide.orange .slide-foot { color: rgba(5,5,5,0.45); }
+.slide.orange .slide-foot { color: rgba(5,5,5,0.72); }
 .slide-num { font-variant-numeric: tabular-nums; }
 
 .sym {
@@ -632,7 +632,7 @@ body.on-light .fs-btn {
 }
 
 .rail {
-  position: fixed; left: 14px; top: 50%; transform: translateY(-50%);
+  position: fixed; right: 16px; left: auto; top: 50%; transform: translateY(-50%);
   z-index: 30; display: flex; flex-direction: column; gap: 7px;
   transition: opacity 0.3s;
 }

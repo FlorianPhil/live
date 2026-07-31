@@ -2,6 +2,10 @@
 
 Bilingual HTML keynote for Bastien / Guillaume.
 
+## Live URL (share this)
+
+https://florianphil.github.io/live/goboom-pitch-deck/
+
 ## Open locally
 
 ```bash
@@ -9,6 +13,8 @@ cd working-folder/goboom-pitch-deck
 python3 -m http.server 8799
 # http://127.0.0.1:8799/
 ```
+
+Cinematic overdrive lives in `../goboom-pitch-deck-v2/` (separate experiment).
 
 ## Edit copy
 
@@ -22,4 +28,4 @@ Refresh the browser after saving.
 ## Brand
 
 Dragon Orange `#FF841A` · Black `#050505` · Barlow Condensed + Barlow  
-Official Go Boom logo asset on title · Novium case study only
+Official Go Boom logo asset on title (stacked mark — GO is intentionally shorter than BOOM) · Novium case study only
