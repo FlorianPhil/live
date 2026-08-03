@@ -4,244 +4,346 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex,nofollow" />
-<title>Toneoptic can — walnut / can blue · LLM pack</title>
+<title>Toneoptic can — walnut / can blue · LLM + UGC pack</title>
 <style>
-  :root { --ink:#0a0a0a; --paper:#f4f4f4; --card:#fff; --blue:#2E38B6; --muted:#666; --line:#e5e5e5; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.45; }
-  header { background:var(--blue); color:#fff; padding:18px 22px; display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; justify-content:space-between; }
-  header h1 { margin:0; font-size:18px; font-weight:700; }
-  header p { margin:0; opacity:.9; font-size:13px; }
-  .actions { display:flex; gap:8px; flex-wrap:wrap; }
-  button, .btn { appearance:none; border:0; background:#fff; color:var(--blue); font-weight:700; padding:10px 14px; border-radius:8px; cursor:pointer; font-size:13px; text-decoration:none; }
-  button.secondary { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.45); }
-  main { max-width:1200px; margin:0 auto; padding:22px; }
-  .note { background:#fff; border:1px solid var(--line); border-left:4px solid var(--blue); padding:14px 16px; border-radius:10px; margin-bottom:22px; font-size:14px; }
-  h2 { font-size:15px; text-transform:uppercase; letter-spacing:.08em; margin:28px 0 12px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; position:relative; }
-  .card.form { border-style:dashed; }
-  .card img { width:100%; aspect-ratio:1; object-fit:contain; background:#d8d8d8; display:block; }
-  .card.form img { aspect-ratio:16/10; }
-  .badge { position:absolute; top:10px; left:10px; background:var(--blue); color:#fff; font-size:11px; font-weight:800; padding:4px 8px; border-radius:999px; }
-  .card.form .badge { background:#444; }
-  figcaption { padding:12px 14px 14px; display:flex; flex-direction:column; gap:4px; font-size:13px; }
-  figcaption span { color:var(--muted); }
-  .cdn { margin-top:6px; color:var(--blue); font-weight:700; font-size:12px; text-decoration:none; }
-  pre { white-space:pre-wrap; background:#111; color:#f2f2f2; padding:16px; border-radius:12px; font-size:12.5px; line-height:1.5; overflow:auto; max-height:420px; }
-  .tokens { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0; }
-  .swatch { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px 6px 6px; font-size:12px; font-weight:600; }
-  .swatch i { width:18px; height:18px; border-radius:50%; display:block; border:1px solid rgba(0,0,0,.08); }
-  footer { padding:24px 22px 40px; color:var(--muted); font-size:12px; text-align:center; }
-  #toast { position:fixed; bottom:18px; right:18px; background:#111; color:#fff; padding:10px 14px; border-radius:10px; font-size:13px; opacity:0; transition:.2s; }
-  #toast.show { opacity:1; }
+:root { --ink:#0a0a0a; --paper:#f4f4f4; --card:#fff; --blue:#2E38B6; --muted:#666; --line:#e5e5e5; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.45; }
+header { background:var(--blue); color:#fff; padding:18px 22px; display:flex; flex-wrap:wrap; gap:12px 20px; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:10; }
+header h1 { margin:0; font-size:18px; font-weight:700; }
+header p { margin:0; opacity:.9; font-size:13px; }
+.actions { display:flex; gap:8px; flex-wrap:wrap; }
+button, .btn { appearance:none; border:0; background:#fff; color:var(--blue); font-weight:700; padding:10px 14px; border-radius:8px; cursor:pointer; font-size:13px; text-decoration:none; }
+button.secondary { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.45); }
+main { max-width:1200px; margin:0 auto; padding:22px; }
+.note { background:#fff; border:1px solid var(--line); border-left:4px solid var(--blue); padding:14px 16px; border-radius:10px; margin-bottom:22px; font-size:14px; }
+.nav { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 22px; }
+.nav a { background:#fff; border:1px solid var(--line); padding:8px 12px; border-radius:999px; font-size:12px; font-weight:700; color:var(--ink); text-decoration:none; }
+h2 { font-size:15px; text-transform:uppercase; letter-spacing:.08em; margin:28px 0 12px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; position:relative; display:flex; flex-direction:column; }
+.card img { width:100%; aspect-ratio:1; object-fit:contain; background:#d8d8d8; display:block; }
+.badge { position:absolute; top:10px; left:10px; background:var(--blue); color:#fff; font-size:11px; font-weight:800; padding:4px 8px; border-radius:999px; }
+.card:has(.badge:contains()) {}
+figcaption { padding:12px 14px 14px; display:flex; flex-direction:column; gap:4px; font-size:13px; }
+figcaption span { color:var(--muted); }
+.cdn { margin-top:6px; color:var(--blue); font-weight:700; font-size:12px; text-decoration:none; }
+.prompt { background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px; margin:0 0 14px; }
+.prompt-head { display:flex; justify-content:space-between; gap:12px; align-items:center; margin-bottom:8px; }
+.prompt-head h3 { margin:0; font-size:15px; }
+.prompt-head button { background:var(--blue); color:#fff; }
+pre { white-space:pre-wrap; background:#111; color:#f2f2f2; padding:14px; border-radius:12px; font-size:12.5px; line-height:1.5; overflow:auto; max-height:380px; margin:0; }
+.tokens { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 0; }
+.swatch { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:6px 10px 6px 6px; font-size:12px; font-weight:600; }
+.swatch i { width:18px; height:18px; border-radius:50%; display:block; }
+footer { padding:24px 22px 40px; color:var(--muted); font-size:12px; text-align:center; }
+#toast { position:fixed; bottom:18px; right:18px; background:#111; color:#fff; padding:10px 14px; border-radius:10px; font-size:13px; opacity:0; transition:.2s; z-index:20; }
+#toast.show { opacity:1; }
 </style>
 </head>
 <body>
 <header>
   <div>
     <h1>Toneoptic · can · walnut / can blue</h1>
-    <p>SKU 46394349781182 · live pack for Magnific / Higgsfield / any LLM</p>
+    <p>SKU lock + UGC action prompts · paste this URL into any LLM</p>
   </div>
   <div class="actions">
     <button id="copyPack">Copy full LLM pack</button>
-    <button class="secondary" id="copyBrief">Copy brief only</button>
+    <button class="secondary" id="copyA">Copy prompt A</button>
     <a class="btn" href="https://www.toneoptic.com/products/can?variant=46394349781182" target="_blank" rel="noopener">Open PDP</a>
   </div>
 </header>
 <main>
   <div class="note">
-    <strong>Live URL:</strong> <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/">https://florianphil.github.io/live/toneoptic-can-walnut-blue/</a><br/>
-    Paste this page URL into any LLM. All product images are public absolute URLs.
-    Sitewide scrape found only <strong>2 official walnut + can-blue masters</strong>; detail crops cover angles.
+    <strong>Live:</strong> <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/">https://florianphil.github.io/live/toneoptic-can-walnut-blue/</a><br/>
+    Use <strong>SKU images</strong> for product accuracy. Use <strong>MOTION refs</strong> for hands/flip/scale language (official clips often show rpm/white — keep walnut/can-blue lock).
     <div class="tokens">
-      <span class="swatch"><i style="background:#2E38B6"></i>UI blue #2E38B6</span>
-      <span class="swatch"><i style="background:#2426BC"></i>Product blue #2426BC</span>
-      <span class="swatch"><i style="background:#8A6C5A"></i>Walnut #8A6C5A</span>
+      <span class="swatch"><i style="background:#2E38B6"></i>#2E38B6</span>
+      <span class="swatch"><i style="background:#2426BC"></i>#2426BC</span>
+      <span class="swatch"><i style="background:#8A6C5A"></i>Walnut</span>
       <span class="swatch"><i style="background:#C8C6C5"></i>Aluminum</span>
-      <span class="swatch"><i style="background:#D0D0D0"></i>Studio gray</span>
     </div>
   </div>
-  <h2>1 · SKU product images (use these)</h2>
-  <div class="grid">
-    <figure class="card">
-      <div class="badge">SKU</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-three-quarter__CAN_Walnut_Blue.png" target="_blank" rel="noopener"><img src="sku/hero-three-quarter__CAN_Walnut_Blue.png" alt="Hero — 3/4 (walnut / can blue)" loading="lazy" /></a>
-      <figcaption>
-        <strong>Hero — 3/4 (walnut / can blue)</strong>
-        <span>Primary reference. Use this first.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-three-quarter__CAN_Walnut_Blue.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure>
+  <nav class="nav">
+    <a href="#sku">SKU images</a>
+    <a href="#motion">Motion / scale</a>
+    <a href="#ugc">UGC prompts</a>
+    <a href="#urls">URLs</a>
+  </nav>
 
-    <figure class="card">
-      <div class="badge">SKU</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png" target="_blank" rel="noopener"><img src="sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png" alt="Hero — square, opaque blue legs" loading="lazy" /></a>
-      <figcaption>
-        <strong>Hero — square, opaque blue legs</strong>
-        <span>Best blue-foot clarity. Variant featured image.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure>
+  <h2 id="sku">1 · SKU product images</h2>
+  <div class="grid"><figure class="card">
+  <div class="badge">SKU</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-three-quarter__CAN_Walnut_Blue.png" target="_blank" rel="noopener"><img src="sku/hero-three-quarter__CAN_Walnut_Blue.png" alt="Hero — 3/4 (walnut / can blue)" loading="lazy" /></a>
+  <figcaption><strong>Hero — 3/4 (walnut / can blue)</strong><span>Primary product lock. Attach first.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-three-quarter__CAN_Walnut_Blue.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">SKU</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png" target="_blank" rel="noopener"><img src="sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png" alt="Hero — square, opaque blue legs" loading="lazy" /></a>
+  <figcaption><strong>Hero — square, opaque blue legs</strong><span>Best blue-foot clarity.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">SKU CROP</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-blue-foot-detail.png" target="_blank" rel="noopener"><img src="sku/crop-blue-foot-detail.png" alt="Detail — can-blue foot" loading="lazy" /></a>
+  <figcaption><strong>Detail — can-blue foot</strong><span>Accent geometry lock.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-blue-foot-detail.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">SKU CROP</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png" target="_blank" rel="noopener"><img src="sku/crop-walnut-panel-grain.png" alt="Detail — walnut grain" loading="lazy" /></a>
+  <figcaption><strong>Detail — walnut grain</strong><span>Wood + fasteners.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">SKU CROP</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png" target="_blank" rel="noopener"><img src="sku/crop-front-rail-detail.png" alt="Detail — rails + records" loading="lazy" /></a>
+  <figcaption><strong>Detail — rails + records</strong><span>Flip-through geometry.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">SKU CROP</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-records-top.png" target="_blank" rel="noopener"><img src="sku/crop-records-top.png" alt="Detail — record spines" loading="lazy" /></a>
+  <figcaption><strong>Detail — record spines</strong><span>Fill state.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-records-top.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure></div>
+  <h2>Form-only</h2>
+  <div class="grid"><figure class="card">
+  <div class="badge">FORM ONLY</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png" target="_blank" rel="noopener"><img src="sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png" alt="FORM ONLY — walnut / transparent" loading="lazy" /></a>
+  <figcaption><strong>FORM ONLY — walnut / transparent</strong><span>Shape only — force can-blue feet.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">FORM ONLY</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png" target="_blank" rel="noopener"><img src="sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png" alt="FORM ONLY — stack (no blue)" loading="lazy" /></a>
+  <figcaption><strong>FORM ONLY — stack (no blue)</strong><span>Stacking proportions only.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure></div>
 
-    <figure class="card">
-      <div class="badge">SKU CROP</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-blue-foot-detail.png" target="_blank" rel="noopener"><img src="sku/crop-blue-foot-detail.png" alt="Detail — can-blue foot" loading="lazy" /></a>
-      <figcaption>
-        <strong>Detail — can-blue foot</strong>
-        <span>Accent color + bracket geometry lock.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-blue-foot-detail.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure>
+  <h2 id="motion">2 · Motion / scale references</h2>
+  <p style="color:var(--muted);font-size:14px;margin-top:-4px">These teach human interaction. Recolor any non-walnut units to the SKU lock.</p>
+  <div class="grid"><figure class="card">
+  <div class="badge">MOTION</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/01-hand-flip-browse.jpg" target="_blank" rel="noopener"><img src="ugc-refs/01-hand-flip-browse.jpg" alt="Motion — hand flip / browse" loading="lazy" /></a>
+  <figcaption><strong>Motion — hand flip / browse</strong><span>Finger + sleeve motion. Recolor unit to walnut/can blue.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/01-hand-flip-browse.jpg" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">MOTION</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/02-sleeve-pull-detail.jpg" target="_blank" rel="noopener"><img src="ugc-refs/02-sleeve-pull-detail.jpg" alt="Motion — sleeve pull" loading="lazy" /></a>
+  <figcaption><strong>Motion — sleeve pull</strong><span>Handheld pull / glare / collector texture.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/02-sleeve-pull-detail.jpg" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">MOTION</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/03-shelf-scale-rows.jpg" target="_blank" rel="noopener"><img src="ugc-refs/03-shelf-scale-rows.jpg" alt="Motion — rows / capacity scale" loading="lazy" /></a>
+  <figcaption><strong>Motion — rows / capacity scale</strong><span>How many LPs feel dense in frame.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/03-shelf-scale-rows.jpg" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure>
+<figure class="card">
+  <div class="badge">MOTION</div>
+  <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/04-hands-unbox-scale.jpg" target="_blank" rel="noopener"><img src="ugc-refs/04-hands-unbox-scale.jpg" alt="Motion — hands for scale" loading="lazy" /></a>
+  <figcaption><strong>Motion — hands for scale</strong><span>Human hands establishing object size.</span>
+  <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/04-hands-unbox-scale.jpg" target="_blank" rel="noopener">Open image URL</a></figcaption>
+</figure></div>
 
-    <figure class="card">
-      <div class="badge">SKU CROP</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png" target="_blank" rel="noopener"><img src="sku/crop-walnut-panel-grain.png" alt="Detail — walnut grain panel" loading="lazy" /></a>
-      <figcaption>
-        <strong>Detail — walnut grain panel</strong>
-        <span>Wood tone + fastener placement.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure>
+  <h2 id="ugc">3 · UGC action prompts (copy into your template tool)</h2>
+  
+<article class="prompt" id="prompt-A">
+  <div class="prompt-head">
+    <h3>A · Living-room UGC review (hero template — use this first)</h3>
+    <button type="button" data-copy="prompt-A-text">Copy prompt</button>
+  </div>
+  <pre id="prompt-A-text">Raw UGC product review video, vertical 9:16, iPhone aesthetic, slight handheld micro-shake, warm late-afternoon window light in a clean modern listening room, no captions, no stickers, no emoji — a design-forward guy in his late 20s reviewing and demonstrating the Toneoptic can vinyl crate in walnut with can-blue feet. The can stays on-axis and fully visible whenever he demos it.
 
-    <figure class="card">
-      <div class="badge">SKU CROP</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png" target="_blank" rel="noopener"><img src="sku/crop-front-rail-detail.png" alt="Detail — aluminum rails + records" loading="lazy" /></a>
-      <figcaption>
-        <strong>Detail — aluminum rails + records</strong>
-        <span>Top rail / flip-through geometry.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure>
+He kneels beside the can on a low oak floor, lifts it a few inches by the walnut end-panel handle scoop with both hands, shows the weight is manageable, sets it down with a soft thud — &quot;Okay this is the first record crate that doesn’t feel like a milk crate apology.&quot;
 
-    <figure class="card">
-      <div class="badge">SKU CROP</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-records-top.png" target="_blank" rel="noopener"><img src="sku/crop-records-top.png" alt="Detail — record spines" loading="lazy" /></a>
-      <figcaption>
-        <strong>Detail — record spines</strong>
-        <span>Fill state / sleeve color energy.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-records-top.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure></div>
-  <h2>2 · Form-only (geometry — force can-blue feet)</h2>
-  <div class="grid">
-    <figure class="card form">
-      <div class="badge">FORM ONLY</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png" target="_blank" rel="noopener"><img src="sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png" alt="FORM ONLY — walnut / transparent" loading="lazy" /></a>
-      <figcaption>
-        <strong>FORM ONLY — walnut / transparent</strong>
-        <span>Same walnut body, NO can-blue feet. Shape reference only — recolor accents to can blue.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure>
+He leans in, runs two fingers along the horizontal walnut grain, then taps a matte can-blue corner foot and the brushed aluminum top rail — &quot;Walnut. Real metal rails. And that blue is not an accident.&quot;
 
-    <figure class="card form">
-      <div class="badge">FORM ONLY</div>
-      <a href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png" target="_blank" rel="noopener"><img src="sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png" alt="FORM ONLY — stacked pair (no blue accents)" loading="lazy" /></a>
-      <figcaption>
-        <strong>FORM ONLY — stacked pair (no blue accents)</strong>
-        <span>Stacking / proportions only. Feet are transparent — do not copy foot color.</span>
-        <a class="cdn" href="https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png" target="_blank" rel="noopener">Open image URL</a>
-      </figcaption>
-    </figure></div>
-  <h2>3 · LLM brief + prompts</h2>
-  <pre id="brief"># Toneoptic can — WALNUT / CAN BLUE (SKU lock)
+He flips through LP spines with one hand, covers flying past in a smooth arc, pulls one jacket fully vertical to show the dual-sided open access, then slots it back — &quot;You can actually flip like a shop bin. Both sides stay open.&quot;
 
-Variant ID: 46394349781182
-URL: https://www.toneoptic.com/products/can?variant=46394349781182
-Price: $325
-Live pack: https://florianphil.github.io/live/toneoptic-can-walnut-blue/
+He stacks a second matching walnut/can-blue can on top, seats it with a clean click of alignment, pats the stack — &quot;Stacks. Like furniture. Not a leaning tower of regret.&quot;
 
-## Product lock (do not invent other colorways)
-- End panels: American black walnut, horizontal grain, satin, visible silver circular fasteners (4 per panel)
-- Frame / rails / front-back ledges: brushed silver aluminum (matte/satin, not chrome)
-- Accent: matte CAN BLUE corner feet/brackets — brand UI #2E38B6, product hardware ~#2426BC–#393BB0
-- Open-top vinyl crate, ~18.7&quot; L × 14&quot; D × 14.8&quot; H, usually filled with upright LP sleeves
-- Top aluminum rails = flip-through guides; records sit slightly below top rail
+He lifts the top can off, carries it two steps across frame (body for scale), sets it down, nods to camera — &quot;Handle it. Flip it. Stack it. Yeah.&quot;
 
-## Brand
-- Vibe: premium industrial-minimal listening sanctuary furniture
-- Studio: seamless light gray limbo (#CBCBCB–#D8D8D8), soft diffused light, soft contact shadow
-- Type overlays: Hagrid ExtraBold lowercase for &quot;can&quot;; DM Sans for UI; logo TONEOPTIC all-caps with concentric O
-- Copy tone: &quot;the record crate that can.&quot; / &quot;handle it / stack it / roll it / customize it&quot; / &quot;Made in California.&quot;
+Hard product locks: walnut end panels, can-blue feet only, brushed aluminum, silver fasteners, LPs inside, no logo watermark, no text overlays.
 
-## Official SKU masters
-Toneoptic only published TWO true walnut+can-blue product masters. Use SKU images below; treat FORM ONLY as geometry aids and force can-blue feet.
+---</pre>
+</article>
+<article class="prompt" id="prompt-B">
+  <div class="prompt-head">
+    <h3>B · Macro flip / tactile (15s beat)</h3>
+    <button type="button" data-copy="prompt-B-text">Copy prompt</button>
+  </div>
+  <pre id="prompt-B-text">Close handheld UGC, natural window light, listening corner. Extreme close-ups intercut with mid shots of hands only (no face required). Product: Toneoptic can, walnut / can blue, filled with vinyl.
 
-## Prompt — still hero
-Product photo of the Toneoptic can vinyl record crate, exact variant: American black walnut end panels + matte can-blue corner feet, brushed silver aluminum rails and interior, four silver circular fasteners on the wood panel, filled with upright vinyl record sleeves. Three-quarter studio hero, seamless light gray limbo background, soft diffused lighting, soft contact shadow, photoreal, high material detail, no text overlay.
+1) Fingers pinch and flip LP spines along the top aluminum rails — continuous fluid motion, sleeves catch light.
+2) Thumb traces the U-notch handle on the walnut panel.
+3) Knuckle taps can-blue foot — matte, opaque, sharp corner geometry.
+4) Hands grip both end panels and lift the full crate 20cm off the floor, hold for scale, set down.
+5) Pull one album out, flash cover to lens, reseat it flush.
 
-## Prompt — 5–8s commercial
-5–8 second premium product commercial for Toneoptic can (walnut / can blue only). Slow 3/4 orbit → hands flip LPs on aluminum rails → macro walnut grain + can-blue foot → two cans stacking → hold. Calm industrial-minimal, soft limbo light, no alternate colors.
+VO optional line fragments (spoken, not burned in): &quot;Flip.&quot; / &quot;Lift.&quot; / &quot;That’s the whole job.&quot;
 
-## Avoid
-gloss white, oak, all-black, transparent feet, chrome mirror metal, orange wood, teal/cyan blue, lifestyle clutter, floating badges, wrong proportions</pre>
-  <h2>4 · Public image URLs</h2>
+---</pre>
+</article>
+<article class="prompt" id="prompt-C">
+  <div class="prompt-head">
+    <h3>C · Scale walk-in (establishing → product)</h3>
+    <button type="button" data-copy="prompt-C-text">Copy prompt</button>
+  </div>
+  <pre id="prompt-C-text">Wide then push-in, handheld. A person walks into a bright apartment listening nook where two stacked walnut/can-blue cans sit beside a turntable. They crouch into frame so torso/hands give human scale next to the ~15&quot; tall crate. They rotate the can 90° to show dual-sided access, flip three records, leave the “now playing” jacket face-out on the open side. Soft natural light, shallow depth, product always sharp. No text.
+
+---</pre>
+</article>
+<article class="prompt" id="prompt-D">
+  <div class="prompt-head">
+    <h3>D · Stack + carry loop (function commercial, still UGC-coded)</h3>
+    <button type="button" data-copy="prompt-D-text">Copy prompt</button>
+  </div>
+  <pre id="prompt-D-text">iPhone vertical, clean concrete floor, soft daylight. One person carries a filled walnut/can-blue can into frame using the exterior handle scoop, sets it down, brings a second identical can, stacks it carefully (show seating), then unstacks and carries one away. Emphasize: exterior handles (not fishing inside the records), stable stack, can-blue feet visible on both units, walnut grain readable. Minimal talk: &quot;Two hands. No spilled records.&quot;
+
+---</pre>
+</article>
+<article class="prompt" id="prompt-E">
+  <div class="prompt-head">
+    <h3>E · “Why it exists” rant (pain → fix)</h3>
+    <button type="button" data-copy="prompt-E-text">Copy prompt</button>
+  </div>
+  <pre id="prompt-E-text">Raw UGC talking-head then cutaways. Creator holds an old milk crate briefly (or empty hands miming the pain), then cuts to the Toneoptic can walnut/can-blue. Demonstrates: no crushed fingers while flipping; lifts without sleeves avalanche; stacks two high. Energy is relieved geek, not shouty. End on 3/4 hero of walnut/can-blue can filled with LPs. Line: &quot;It’s a crate designed by people who actually dig.&quot;
+
+---</pre>
+</article>
+<article class="prompt" id="prompt-F">
+  <div class="prompt-head">
+    <h3>F · Night listening ritual (mood UGC)</h3>
+    <button type="button" data-copy="prompt-F-text">Copy prompt</button>
+  </div>
+  <pre id="prompt-F-text">Dim warm lamp light, vinyl crackle ambience. Creator pulls a record from the walnut/can-blue can, walks to turntable (can stays in background for scale), drops needle, returns and faces one sleeve out on the can’s open side as “now playing.” Slow, intimate, product materials still accurate under warm light (walnut stays brown, can-blue stays royal—not purple). No text overlays.</pre>
+</article>
+
+  <h2 id="urls">4 · Public image URLs</h2>
   <pre id="cdn">- Hero — 3/4 (walnut / can blue): https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-three-quarter__CAN_Walnut_Blue.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/CAN_Walnut_Blue.png?v=1770745168&amp;width=3840
 - Hero — square, opaque blue legs: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/CAN_Walnut_Blue-opaquelegs-sq.png?v=1779825712&amp;width=3840
 - Detail — can-blue foot: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-blue-foot-detail.png
-- Detail — walnut grain panel: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png
-- Detail — aluminum rails + records: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png
+- Detail — walnut grain: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png
+- Detail — rails + records: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png
 - Detail — record spines: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-records-top.png
 - FORM ONLY — walnut / transparent: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png?v=1770745168&amp;width=3840
-- FORM ONLY — stacked pair (no blue accents): https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png?v=1770415530&amp;width=3840</pre>
-</main>
-<footer>Hosted on FlorianPhil/live · noindex · scraped 2026-08-03</footer>
-<textarea id="pack" hidden># Toneoptic can — WALNUT / CAN BLUE (SKU lock)
+- FORM ONLY — stack (no blue): https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png
+- Motion — hand flip / browse: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/01-hand-flip-browse.jpg
+- Motion — sleeve pull: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/02-sleeve-pull-detail.jpg
+- Motion — rows / capacity scale: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/03-shelf-scale-rows.jpg
+- Motion — hands for scale: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/04-hands-unbox-scale.jpg</pre>
+  <h2>5 · Brief</h2>
+  <pre id="brief"># Toneoptic can — WALNUT / CAN BLUE (SKU + UGC action)
 
-Variant ID: 46394349781182
-URL: https://www.toneoptic.com/products/can?variant=46394349781182
-Price: $325
+Variant: 46394349781182 · https://www.toneoptic.com/products/can?variant=46394349781182
 Live pack: https://florianphil.github.io/live/toneoptic-can-walnut-blue/
 
-## Product lock (do not invent other colorways)
-- End panels: American black walnut, horizontal grain, satin, visible silver circular fasteners (4 per panel)
-- Frame / rails / front-back ledges: brushed silver aluminum (matte/satin, not chrome)
-- Accent: matte CAN BLUE corner feet/brackets — brand UI #2E38B6, product hardware ~#2426BC–#393BB0
-- Open-top vinyl crate, ~18.7&quot; L × 14&quot; D × 14.8&quot; H, usually filled with upright LP sleeves
-- Top aluminum rails = flip-through guides; records sit slightly below top rail
+## Product lock
+American black walnut end panels, brushed silver aluminum rails, matte can-blue corner feet (#2E38B6 UI / ~#2426BC hardware), silver circular fasteners, open-top LP crate ~18.7&quot;×14&quot;×14.8&quot;, usually filled with upright sleeves. Soft natural indoor light or gray limbo.
 
-## Brand
-- Vibe: premium industrial-minimal listening sanctuary furniture
-- Studio: seamless light gray limbo (#CBCBCB–#D8D8D8), soft diffused light, soft contact shadow
-- Type overlays: Hagrid ExtraBold lowercase for &quot;can&quot;; DM Sans for UI; logo TONEOPTIC all-caps with concentric O
-- Copy tone: &quot;the record crate that can.&quot; / &quot;handle it / stack it / roll it / customize it&quot; / &quot;Made in California.&quot;
-
-## Official SKU masters
-Toneoptic only published TWO true walnut+can-blue product masters. Use SKU images below; treat FORM ONLY as geometry aids and force can-blue feet.
-
-## Prompt — still hero
-Product photo of the Toneoptic can vinyl record crate, exact variant: American black walnut end panels + matte can-blue corner feet, brushed silver aluminum rails and interior, four silver circular fasteners on the wood panel, filled with upright vinyl record sleeves. Three-quarter studio hero, seamless light gray limbo background, soft diffused lighting, soft contact shadow, photoreal, high material detail, no text overlay.
-
-## Prompt — 5–8s commercial
-5–8 second premium product commercial for Toneoptic can (walnut / can blue only). Slow 3/4 orbit → hands flip LPs on aluminum rails → macro walnut grain + can-blue foot → two cans stacking → hold. Calm industrial-minimal, soft limbo light, no alternate colors.
+## Motion truths (what the product is for)
+handle / flip through / stack / dual-sided display / optional roll with eze (only if asked)
 
 ## Avoid
-gloss white, oak, all-black, transparent feet, chrome mirror metal, orange wood, teal/cyan blue, lifestyle clutter, floating badges, wrong proportions
+gloss white, oak, transparent feet, chrome, teal/cyan, burned-in captions, empty crate unless asked</pre>
+</main>
+<footer>Hosted on FlorianPhil/live · noindex · updated with UGC action pack</footer>
+<textarea id="pack" hidden># Toneoptic can — WALNUT / CAN BLUE (SKU + UGC action)
 
-## Image URLs (public)
+Variant: 46394349781182 · https://www.toneoptic.com/products/can?variant=46394349781182
+Live pack: https://florianphil.github.io/live/toneoptic-can-walnut-blue/
+
+## Product lock
+American black walnut end panels, brushed silver aluminum rails, matte can-blue corner feet (#2E38B6 UI / ~#2426BC hardware), silver circular fasteners, open-top LP crate ~18.7&quot;×14&quot;×14.8&quot;, usually filled with upright sleeves. Soft natural indoor light or gray limbo.
+
+## Motion truths (what the product is for)
+handle / flip through / stack / dual-sided display / optional roll with eze (only if asked)
+
+## Avoid
+gloss white, oak, transparent feet, chrome, teal/cyan, burned-in captions, empty crate unless asked
+
+## UGC prompts
+
+### A · Living-room UGC review (hero template — use this first)
+
+Raw UGC product review video, vertical 9:16, iPhone aesthetic, slight handheld micro-shake, warm late-afternoon window light in a clean modern listening room, no captions, no stickers, no emoji — a design-forward guy in his late 20s reviewing and demonstrating the Toneoptic can vinyl crate in walnut with can-blue feet. The can stays on-axis and fully visible whenever he demos it.
+
+He kneels beside the can on a low oak floor, lifts it a few inches by the walnut end-panel handle scoop with both hands, shows the weight is manageable, sets it down with a soft thud — &quot;Okay this is the first record crate that doesn’t feel like a milk crate apology.&quot;
+
+He leans in, runs two fingers along the horizontal walnut grain, then taps a matte can-blue corner foot and the brushed aluminum top rail — &quot;Walnut. Real metal rails. And that blue is not an accident.&quot;
+
+He flips through LP spines with one hand, covers flying past in a smooth arc, pulls one jacket fully vertical to show the dual-sided open access, then slots it back — &quot;You can actually flip like a shop bin. Both sides stay open.&quot;
+
+He stacks a second matching walnut/can-blue can on top, seats it with a clean click of alignment, pats the stack — &quot;Stacks. Like furniture. Not a leaning tower of regret.&quot;
+
+He lifts the top can off, carries it two steps across frame (body for scale), sets it down, nods to camera — &quot;Handle it. Flip it. Stack it. Yeah.&quot;
+
+Hard product locks: walnut end panels, can-blue feet only, brushed aluminum, silver fasteners, LPs inside, no logo watermark, no text overlays.
+
+---
+
+### B · Macro flip / tactile (15s beat)
+
+Close handheld UGC, natural window light, listening corner. Extreme close-ups intercut with mid shots of hands only (no face required). Product: Toneoptic can, walnut / can blue, filled with vinyl.
+
+1) Fingers pinch and flip LP spines along the top aluminum rails — continuous fluid motion, sleeves catch light.
+2) Thumb traces the U-notch handle on the walnut panel.
+3) Knuckle taps can-blue foot — matte, opaque, sharp corner geometry.
+4) Hands grip both end panels and lift the full crate 20cm off the floor, hold for scale, set down.
+5) Pull one album out, flash cover to lens, reseat it flush.
+
+VO optional line fragments (spoken, not burned in): &quot;Flip.&quot; / &quot;Lift.&quot; / &quot;That’s the whole job.&quot;
+
+---
+
+### C · Scale walk-in (establishing → product)
+
+Wide then push-in, handheld. A person walks into a bright apartment listening nook where two stacked walnut/can-blue cans sit beside a turntable. They crouch into frame so torso/hands give human scale next to the ~15&quot; tall crate. They rotate the can 90° to show dual-sided access, flip three records, leave the “now playing” jacket face-out on the open side. Soft natural light, shallow depth, product always sharp. No text.
+
+---
+
+### D · Stack + carry loop (function commercial, still UGC-coded)
+
+iPhone vertical, clean concrete floor, soft daylight. One person carries a filled walnut/can-blue can into frame using the exterior handle scoop, sets it down, brings a second identical can, stacks it carefully (show seating), then unstacks and carries one away. Emphasize: exterior handles (not fishing inside the records), stable stack, can-blue feet visible on both units, walnut grain readable. Minimal talk: &quot;Two hands. No spilled records.&quot;
+
+---
+
+### E · “Why it exists” rant (pain → fix)
+
+Raw UGC talking-head then cutaways. Creator holds an old milk crate briefly (or empty hands miming the pain), then cuts to the Toneoptic can walnut/can-blue. Demonstrates: no crushed fingers while flipping; lifts without sleeves avalanche; stacks two high. Energy is relieved geek, not shouty. End on 3/4 hero of walnut/can-blue can filled with LPs. Line: &quot;It’s a crate designed by people who actually dig.&quot;
+
+---
+
+### F · Night listening ritual (mood UGC)
+
+Dim warm lamp light, vinyl crackle ambience. Creator pulls a record from the walnut/can-blue can, walks to turntable (can stays in background for scale), drops needle, returns and faces one sleeve out on the can’s open side as “now playing.” Slow, intimate, product materials still accurate under warm light (walnut stays brown, can-blue stays royal—not purple). No text overlays.
+
+## Image URLs
 - Hero — 3/4 (walnut / can blue): https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-three-quarter__CAN_Walnut_Blue.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/CAN_Walnut_Blue.png?v=1770745168&amp;width=3840
 - Hero — square, opaque blue legs: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/hero-square-opaque-legs__CAN_Walnut_Blue-opaquelegs-sq.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/CAN_Walnut_Blue-opaquelegs-sq.png?v=1779825712&amp;width=3840
 - Detail — can-blue foot: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-blue-foot-detail.png
-- Detail — walnut grain panel: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png
-- Detail — aluminum rails + records: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png
+- Detail — walnut grain: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-walnut-panel-grain.png
+- Detail — rails + records: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-front-rail-detail.png
 - Detail — record spines: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/crop-records-top.png
 - FORM ONLY — walnut / transparent: https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/walnut-transparent-FORM-ONLY__CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/CAN_Walnut_cae1edc9-13ce-40ec-9751-e2163318fc40.png?v=1770745168&amp;width=3840
-- FORM ONLY — stacked pair (no blue accents): https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png
-  CDN master: https://www.toneoptic.com/cdn/shop/files/Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png?v=1770415530&amp;width=3840
+- FORM ONLY — stack (no blue): https://florianphil.github.io/live/toneoptic-can-walnut-blue/sku/stack-double__Double_CAN_Walnut_21b358f5-3c70-4455-9fe5-427aa2c13e36.png
+- Motion — hand flip / browse: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/01-hand-flip-browse.jpg
+- Motion — sleeve pull: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/02-sleeve-pull-detail.jpg
+- Motion — rows / capacity scale: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/03-shelf-scale-rows.jpg
+- Motion — hands for scale: https://florianphil.github.io/live/toneoptic-can-walnut-blue/ugc-refs/04-hands-unbox-scale.jpg
 </textarea>
 <div id="toast">Copied</div>
 <script>
 const toast=(m)=>{const el=document.getElementById('toast'); el.textContent=m; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),1400);};
-document.getElementById('copyPack').onclick=async()=>{await navigator.clipboard.writeText(document.getElementById('pack').value); toast('Full LLM pack copied');};
-document.getElementById('copyBrief').onclick=async()=>{await navigator.clipboard.writeText(document.getElementById('brief').textContent); toast('Brief copied');};
+const copyEl=(id)=>navigator.clipboard.writeText(document.getElementById(id).textContent||document.getElementById(id).value);
+document.getElementById('copyPack').onclick=async()=>{await copyEl('pack'); toast('Full LLM pack copied');};
+document.getElementById('copyA').onclick=async()=>{await copyEl('prompt-A-text'); toast('Prompt A copied');};
+document.querySelectorAll('[data-copy]').forEach(btn=>btn.onclick=async()=>{await copyEl(btn.getAttribute('data-copy')); toast('Prompt copied');});
 </script>
 </body>
 </html>
