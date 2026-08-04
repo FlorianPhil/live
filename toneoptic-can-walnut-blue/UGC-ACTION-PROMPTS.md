@@ -66,3 +66,18 @@ Dim warm lamp light, vinyl crackle ambience. Creator pulls a record from the wal
 
 ## Negative (all templates)
 No gloss-white can, no oak, no transparent feet, no chrome mirror metal, no teal/cyan accents, no floating captions, no influencer mansion clutter, no melting wood, no empty crate unless specified, no eze dolly unless asked.
+
+---
+
+## G · Speakeasy under-table CAN pull (cinema / Higgsfield) — CAN ONLY, NOT rpm
+
+**Hard lock:** Product is Toneoptic **can** only — a rectangular vinyl crate that stores, stacks, and rolls. Do **not** show the Toneoptic **rpm** (no rotating shelf, no pull-out tray, no spinning mechanism, no Kallax drawer unit). No crate rotation. Skimming LPs inside a still crate is fine; the can itself does not rotate.
+
+**SKU:** American black walnut end panels + matte can-blue corner feet + brushed silver aluminum rails/frame + silver circular fasteners. Prefer TONEOPTIC wordmark visible on a side/edge if the angle allows; otherwise keep brand-accurate materials.
+
+### Paste into Higgsfield Cinema / Marketing / Supercomputer
+
+Cinematic one-shot product commercial, 9:16 or 16:9, speakeasy New York basement club energy — low warm tungsten practicals, red velvet and dark wood, haze in the air, soul / hip-hop vinyl night. A cool DJ is mid-set behind a small booth table; turntable and mixer on top. Camera starts on the tabletop: hands on the decks, a record spinning, warm lamp spill. Then the camera slowly dollies and tilts down the side of the table in one continuous move — following his hand as it reaches under the booth, finds the Toneoptic can vinyl crate stored under the table (walnut / can blue, filled with LPs), and pulls the can forward into light. Focus racks to the can: walnut grain, can-blue feet, brushed aluminum rails; hold briefly on any visible TONEOPTIC mark. Camera holds static as his fingers skim a few upright sleeves inside the still (non-rotating) can, select one jacket, and lift it out cleanly. He slides the can back under the table with one hand. Cut or soft rack to background: he drops the needle / blends the transition on the decks while the new track comes in — we hear the mix shift more than we see every fader. Photoreal, shallow depth, premium handheld-stable cinema feel (subtle, not shaky UGC), no text overlays, no captions, no rpm product, no rotating storage furniture.
+
+### Negative
+rpm rotating unit, pull-out shelf tray, Kallax drawer, spinning crate, rotating mechanism, gloss-white can, transparent feet, teal accents, bright daylight kitchen, influencer talking-head, burned-in logos/stickers, empty can
