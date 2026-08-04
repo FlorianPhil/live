@@ -1,7 +1,7 @@
 # Toneoptic can — UGC action prompts (walnut / can blue)
 
 Attach SKU hero + blue-foot crop as product lock.
-Motion refs in `ugc-refs/` teach hands, flip, scale — **recolor product to walnut / can blue** (many official motion clips show rpm/white units).
+Product lock images only. Do **not** use rpm footage or rpm UI as reference.
 
 Lock always:
 American black walnut end panels, brushed silver aluminum rails, matte can-blue corner feet, silver circular fasteners, filled with upright LPs, soft natural indoor light OR clean limbo — never gloss-white can, never teal feet.
@@ -16,11 +16,11 @@ He kneels beside the can on a low oak floor, lifts it a few inches by the walnut
 
 He leans in, runs two fingers along the horizontal walnut grain, then taps a matte can-blue corner foot and the brushed aluminum top rail — "Walnut. Real metal rails. And that blue is not an accident."
 
-He flips through LP spines with one hand, covers flying past in a smooth arc, pulls one jacket fully vertical to show the dual-sided open access, then slots it back — "You can actually flip like a shop bin. Both sides stay open."
+He flips through LP spines with one hand, covers flying past in a smooth arc, pulls one jacket fully vertical to show the dual-sided open access, then slots it back — "Open crate access — dig and pull a jacket clean."
 
 He stacks a second matching walnut/can-blue can on top, seats it with a clean click of alignment, pats the stack — "Stacks. Like furniture. Not a leaning tower of regret."
 
-He lifts the top can off, carries it two steps across frame (body for scale), sets it down, nods to camera — "Handle it. Flip it. Stack it. Yeah."
+He lifts the top can off, carries it two steps across frame (body for scale), sets it down, nods to camera — "Lift it. Dig it. Stack it. Yeah."
 
 Hard product locks: walnut end panels, can-blue feet only, brushed aluminum, silver fasteners, LPs inside, no logo watermark, no text overlays.
 
@@ -30,7 +30,7 @@ Hard product locks: walnut end panels, can-blue feet only, brushed aluminum, sil
 
 Close handheld UGC, natural window light, listening corner. Extreme close-ups intercut with mid shots of hands only (no face required). Product: Toneoptic can, walnut / can blue, filled with vinyl.
 
-1) Fingers pinch and flip LP spines along the top aluminum rails — continuous fluid motion, sleeves catch light.
+1) Fingers skim upright LP sleeves inside the still can — dig, don't spin the crate.
 2) Thumb traces the U-notch handle on the walnut panel.
 3) Knuckle taps can-blue foot — matte, opaque, sharp corner geometry.
 4) Hands grip both end panels and lift the full crate 20cm off the floor, hold for scale, set down.
@@ -42,7 +42,7 @@ VO optional line fragments (spoken, not burned in): "Flip." / "Lift." / "That’
 
 ## C · Scale walk-in (establishing → product)
 
-Wide then push-in, handheld. A person walks into a bright apartment listening nook where two stacked walnut/can-blue cans sit beside a turntable. They crouch into frame so torso/hands give human scale next to the ~15" tall crate. They rotate the can 90° to show dual-sided access, flip three records, leave the “now playing” jacket face-out on the open side. Soft natural light, shallow depth, product always sharp. No text.
+Wide then push-in, handheld. A person walks into a bright apartment listening nook where two stacked walnut/can-blue cans sit beside a turntable. They crouch into frame so torso/hands give human scale next to the ~15" tall crate. They turn the still can to show dual-sided open access, skim three sleeves, leave the “now playing” jacket face-out on the open side. Soft natural light, shallow depth, product always sharp. No text.
 
 ---
 
@@ -54,7 +54,7 @@ iPhone vertical, clean concrete floor, soft daylight. One person carries a fille
 
 ## E · “Why it exists” rant (pain → fix)
 
-Raw UGC talking-head then cutaways. Creator holds an old milk crate briefly (or empty hands miming the pain), then cuts to the Toneoptic can walnut/can-blue. Demonstrates: no crushed fingers while flipping; lifts without sleeves avalanche; stacks two high. Energy is relieved geek, not shouty. End on 3/4 hero of walnut/can-blue can filled with LPs. Line: "It’s a crate designed by people who actually dig."
+Raw UGC talking-head then cutaways. Creator holds an old milk crate briefly (or empty hands miming the pain), then cuts to the Toneoptic can walnut/can-blue. Demonstrates: no crushed fingers while digging; lifts without sleeves avalanche; stacks two high. Energy is relieved geek, not shouty. End on 3/4 hero of walnut/can-blue can filled with LPs. Line: "It’s a crate designed by people who actually dig."
 
 ---
 
