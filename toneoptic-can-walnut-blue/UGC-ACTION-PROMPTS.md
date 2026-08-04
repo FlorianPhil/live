@@ -69,15 +69,24 @@ No gloss-white can, no oak, no transparent feet, no chrome mirror metal, no teal
 
 ---
 
-## G · Speakeasy under-table CAN pull (cinema / Higgsfield) — CAN ONLY, NOT rpm
+## G · Speakeasy under-table CAN (cinema) — CAN ONLY + camera grammar
 
-**Hard lock:** Product is Toneoptic **can** only — a rectangular vinyl crate that stores, stacks, and rolls. Do **not** show the Toneoptic **rpm** (no rotating shelf, no pull-out tray, no spinning mechanism, no Kallax drawer unit). No crate rotation. Skimming LPs inside a still crate is fine; the can itself does not rotate.
+See also `CAMERA-GRAMMAR.md`: **static or perfect circular orbit only**. Orbit = camera on a clock-hand circle. Product (can) does not spin. Not rpm.
 
-**SKU:** American black walnut end panels + matte can-blue corner feet + brushed silver aluminum rails/frame + silver circular fasteners. Prefer TONEOPTIC wordmark visible on a side/edge if the angle allows; otherwise keep brand-accurate materials.
+### Paste into Higgsfield
 
-### Paste into Higgsfield Cinema / Marketing / Supercomputer
+Cinematic Toneoptic product commercial, 9:16 or 16:9. Camera grammar lock: every shot is either fully STATIC or a CIRCULAR ORBIT (camera on a perfect circle like the tip of a clock hand — constant radius, smooth even speed). No linear dollies, no handheld shake, no product spin.
 
-Cinematic one-shot product commercial, 9:16 or 16:9, speakeasy New York basement club energy — low warm tungsten practicals, red velvet and dark wood, haze in the air, soul / hip-hop vinyl night. A cool DJ is mid-set behind a small booth table; turntable and mixer on top. Camera starts on the tabletop: hands on the decks, a record spinning, warm lamp spill. Then the camera slowly dollies and tilts down the side of the table in one continuous move — following his hand as it reaches under the booth, finds the Toneoptic can vinyl crate stored under the table (walnut / can blue, filled with LPs), and pulls the can forward into light. Focus racks to the can: walnut grain, can-blue feet, brushed aluminum rails; hold briefly on any visible TONEOPTIC mark. Camera holds static as his fingers skim a few upright sleeves inside the still (non-rotating) can, select one jacket, and lift it out cleanly. He slides the can back under the table with one hand. Cut or soft rack to background: he drops the needle / blends the transition on the decks while the new track comes in — we hear the mix shift more than we see every fader. Photoreal, shallow depth, premium handheld-stable cinema feel (subtle, not shaky UGC), no text overlays, no captions, no rpm product, no rotating storage furniture.
+Speakeasy New York basement club — low warm tungsten, red velvet, dark wood, light haze, soul / hip-hop vinyl night. A DJ mid-set behind a booth table; turntable and mixer on top.
 
-### Negative
-rpm rotating unit, pull-out shelf tray, Kallax drawer, spinning crate, rotating mechanism, gloss-white can, transparent feet, teal accents, bright daylight kitchen, influencer talking-head, burned-in logos/stickers, empty can
+Shot 1 — STATIC: tabletop hold. Hands on the decks, a record playing, warm lamp spill. Product not yet visible.
+
+Shot 2 — CIRCULAR ORBIT: camera begins above / beside the table and sweeps on a perfect circular arc down and around the booth edge (clock-hand path), revealing under the table where a Toneoptic can vinyl crate (walnut end panels, matte can-blue feet, brushed silver aluminum rails, filled with LPs) sits. Orbit continues as his hand pulls the can forward into the light; keep the can centered in the circle. Brief hold as focus finds walnut grain, can-blue feet, and any visible TONEOPTIC mark. The can itself does not rotate or spin.
+
+Shot 3 — STATIC: locked frame on the open can. Fingers skim a few upright sleeves, pick one jacket, lift it out. Can stays still.
+
+Shot 4 — CIRCULAR ORBIT or STATIC (pick one): he slides the can back under the table; if orbit, a short perfect-circle arc that settles to a static hold on the decks as he blends the transition — we hear the mix more than we see every fader.
+
+Hard product lock: Toneoptic can only (crate). Not the rpm. No rotating shelf, no pull-out tray, no spinning furniture. Photoreal, shallow depth, no text overlays.
+
+Negative: rpm unit, Kallax drawer, lazy-susan product spin, linear dolly-only moves, handheld shake, gloss-white can, transparent feet, teal accents, burned-in captions, empty can
