@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Brand Therapy packages</title>
+<!-- Private review page for T-44. Not for publication.
+     Content source: website-docs/OFFER-PACKAGES.md (single source of truth for packages).
+     Dark is the default. Light: add ?theme=light to the URL, or use the switch.
+     Built as a responsive pricing section so it can move into website/for-founders.html
+     and website/for-brands.html. Package boxes reuse the CSS 3D box from those pages (T-58). -->
+<script>
+(function () {
+  var t = new URLSearchParams(location.search).get('theme');
+  document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent: #5A5CF9;
+  --ff-h: 'Bricolage Grotesque', system-ui, sans-serif;
+  --ff-b: 'Poppins', system-ui, sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+:root[data-theme="dark"] {
+  --bg: #18181B;
+  --ink: #FFFFFF;
+  --text: rgba(255,255,255,0.80);
+  --soft: rgba(255,255,255,0.58);
+  --line: rgba(255,255,255,0.10);
+  --card: rgba(255,255,255,0.025);
+  --card-feat: rgba(90,92,249,0.06);
+  --feat-line: rgba(90,92,249,0.55);
+  --label: #8486FF;
+  --glow: rgba(90,92,249,0.16);
+  --grain: 0.03;
+  --box-shadow: rgba(0,0,0,0.6);
+}
+:root[data-theme="light"] {
+  --bg: #F5F5F7;
+  --ink: #18181B;
+  --text: rgba(24,24,27,0.82);
+  --soft: rgba(24,24,27,0.60);
+  --line: rgba(24,24,27,0.12);
+  --card: #FFFFFF;
+  --card-feat: #FFFFFF;
+  --feat-line: rgba(90,92,249,0.70);
+  --label: #4648E0;
+  --glow: rgba(90,92,249,0.10);
+  --grain: 0;
+  --box-shadow: rgba(24,24,27,0.28);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg); -webkit-font-smoothing: antialiased; }
+body { font-family: var(--ff-b); color: var(--text); background: var(--bg); }
+.purple-dot { color: var(--accent); }
+
+.pricing { position: relative; overflow: hidden; min-height: 100vh; padding: clamp(28px, 3.4vw, 56px) clamp(16px, 4vw, 80px) clamp(24px, 2.4vw, 40px); }
+.pricing::before {
+  content: ''; position: absolute; inset: 0; z-index: 0; opacity: var(--grain); pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.glow { position: absolute; z-index: 0; width: 1100px; height: 700px; right: -200px; top: -260px; background: radial-gradient(ellipse at center, var(--glow) 0%, transparent 65%); pointer-events: none; }
+.inner { position: relative; z-index: 1; max-width: 1720px; margin: 0 auto; }
+
+.head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: clamp(20px, 2vw, 32px); }
+.eyebrow { font-size: 14px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--label); margin-bottom: 12px; }
+h1 { font-family: var(--ff-h); font-weight: 800; font-size: clamp(34px, 3.6vw, 64px); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; color: var(--ink); }
+.head-note { font-size: clamp(15px, 1.05vw, 19px); line-height: 1.5; color: var(--soft); max-width: 520px; text-align: right; }
+
+.cards { display: grid; grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr); gap: clamp(16px, 1.6vw, 28px); align-items: stretch; }
+.card { position: relative; border: 1px solid var(--line); background: var(--card); padding: clamp(20px, 1.8vw, 32px) clamp(20px, 2.2vw, 40px) clamp(22px, 2vw, 34px); }
+.card.featured { border-color: var(--feat-line); background: var(--card-feat); }
+.card .vf { position: absolute; width: 28px; height: 28px; border-color: var(--accent); border-style: solid; }
+.card .vf.tr { top: -1px; right: -1px; border-width: 3px 3px 0 0; }
+.card .vf.bl { bottom: -1px; left: -1px; border-width: 0 0 3px 3px; }
+
+.card-top { display: flex; align-items: center; gap: clamp(16px, 2vw, 36px); padding-bottom: clamp(16px, 1.4vw, 24px); margin-bottom: clamp(16px, 1.4vw, 24px); border-bottom: 1px solid var(--line); }
+.tier-name { font-family: var(--ff-h); font-weight: 700; font-size: clamp(22px, 1.7vw, 30px); line-height: 1.08; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 8px; }
+.price-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; margin-bottom: 6px; }
+.price { font-family: var(--ff-h); font-weight: 800; font-size: clamp(40px, 3vw, 56px); line-height: 1; letter-spacing: -0.03em; color: var(--ink); }
+.price-ref { font-family: var(--ff-h); font-weight: 600; font-size: clamp(22px, 1.6vw, 30px); line-height: 1; color: var(--soft); text-decoration: line-through; text-decoration-thickness: 2px; }
+.timing { font-size: 15px; color: var(--soft); }
+
+.plus { font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--label); margin-bottom: clamp(12px, 1vw, 18px); }
+.groups { display: grid; gap: clamp(16px, 1.4vw, 24px) clamp(24px, 2.6vw, 48px); }
+.groups.two { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.col { display: grid; gap: clamp(16px, 1.4vw, 24px); }
+.role { margin-left: auto; max-width: 300px; font-family: var(--ff-h); font-weight: 600; font-size: clamp(17px, 1.25vw, 22px); line-height: 1.3; color: var(--ink); text-align: right; }
+.group h3 { font-family: var(--ff-h); font-weight: 700; font-size: 19px; line-height: 1.2; color: var(--ink); margin-bottom: 6px; }
+.list, .sub { list-style: none; }
+.list > li { position: relative; padding: 4px 0 4px 26px; font-size: 16px; line-height: 1.4; color: var(--text); }
+.list > li::before { content: ''; position: absolute; left: 2px; top: 9px; width: 10px; height: 6px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+.list strong { color: var(--ink); font-weight: 600; }
+.sub { margin: 3px 0 2px; padding-left: 14px; border-left: 1px solid var(--line); }
+.sub li { padding: 2px 0; font-size: 14px; line-height: 1.4; color: var(--soft); }
+.sub li strong { color: var(--text); font-weight: 500; }
+.opt { font-size: 12px; letter-spacing: 0.04em; color: var(--soft); border: 1px solid var(--line); padding: 0 6px; margin-left: 4px; white-space: nowrap; }
+
+.foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: clamp(16px, 1.6vw, 26px); font-size: 14px; color: var(--soft); }
+.tag { font-weight: 600; color: var(--ink); letter-spacing: 0.02em; }
+.tag .hash { color: var(--accent); }
+
+/* Review control, not part of the section. */
+.theme-switch { position: fixed; z-index: 5; top: 14px; right: 14px; font: 500 12px var(--ff-b); color: var(--soft); background: var(--bg); border: 1px solid var(--line); padding: 6px 12px; cursor: pointer; }
+.theme-switch:hover { color: var(--ink); border-color: var(--accent); }
+@media print { .theme-switch { display: none; } }
+
+/* Package box: same construction as the website pricing section (T-58). Stays dark in both themes. */
+.pkg-stage { position: relative; flex: none; display: flex; justify-content: center; align-items: center; width: 190px; height: 190px; perspective: 1400px; }
+.pkg-stage.duo { width: 232px; }
+.pkg-stage::after { content: ''; position: absolute; left: 50%; bottom: 0; width: 70%; height: 22px; transform: translateX(-50%); background: radial-gradient(ellipse at center, var(--box-shadow) 0%, transparent 70%); filter: blur(6px); z-index: 0; }
+.pkg-box { --w: 122px; --h: 160px; --d: 42px; position: relative; z-index: 1; width: var(--w); height: var(--h); transform-style: preserve-3d; transform: rotateX(-12deg) rotateY(-30deg); transition: transform 1.2s var(--ease-out-expo); }
+.pkg-stage:hover .pkg-box { transform: rotateX(-10deg) rotateY(-22deg); }
+.pkg-box.sm { --w: 96px; --h: 126px; --d: 34px; margin-left: -14px; margin-top: 46px; z-index: 2; }
+.pkg-face { position: absolute; top: 0; left: 0; }
+.pkg-front { width: var(--w); height: var(--h); transform: translateZ(calc(var(--d) / 2)); background: linear-gradient(165deg, #2B2B31 0%, #19191C 55%, #121214 100%); border: 1px solid rgba(255,255,255,0.09); padding: 14px 12px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; overflow: hidden; }
+.pkg-side { width: var(--d); height: var(--h); left: calc((var(--w) - var(--d)) / 2); transform: rotateY(90deg) translateZ(calc(var(--w) / 2)); background: linear-gradient(180deg, #17171A 0%, #0C0C0E 100%); border: 1px solid rgba(255,255,255,0.05); }
+.pkg-side::before { content: ''; position: absolute; left: 0; right: 0; top: 22%; height: 2px; background: var(--accent); opacity: 0.85; }
+.pkg-top { width: var(--w); height: var(--d); top: calc((var(--h) - var(--d)) / 2); transform: rotateX(90deg) translateZ(calc(var(--h) / 2)); background: linear-gradient(90deg, #35353C 0%, #2A2A30 100%); border: 1px solid rgba(255,255,255,0.08); }
+.pkg-kicker { font-family: var(--ff-b); font-size: 7px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.pkg-name { font-family: var(--ff-h); font-weight: 800; font-size: 18px; line-height: 1.02; color: #FFFFFF; letter-spacing: -0.01em; }
+.pkg-box.sm .pkg-name { font-size: 14px; }
+.pkg-tag { font-family: var(--ff-b); font-size: 8px; font-weight: 500; color: rgba(255,255,255,0.55); line-height: 1.4; }
+.pkg-corner { position: absolute; width: 11px; height: 11px; border-color: var(--accent); border-style: solid; top: 7px; right: 7px; border-width: 2px 2px 0 0; }
+
+@media (max-width: 1180px) {
+  .cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .head { flex-direction: column; align-items: flex-start; }
+  .head-note { text-align: left; }
+  .groups.two { grid-template-columns: 1fr; }
+  .col { display: contents; }
+  .g1 { order: 1; } .g2 { order: 2; } .g3 { order: 3; } .col .group:not(.g1):not(.g2):not(.g3) { order: 4; }
+  .theme-switch { top: auto; bottom: 14px; }
+  .card-top { flex-direction: column; align-items: flex-start; }
+  .role { margin-left: 0; text-align: left; max-width: none; }
+  .pkg-stage, .pkg-stage.duo { width: 100%; }
+  .foot { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+<button class="theme-switch" id="themeSwitch" type="button">Switch to light</button>
+<main class="pricing" id="pricing" aria-label="Brand Therapy packages">
+  <div class="glow"></div>
+  <div class="inner">
+
+  <header class="head">
+    <div>
+      <div class="eyebrow">Brand Therapy packages</div>
+      <h1>Your brand, ready to use<span class="purple-dot">.</span></h1>
+    </div>
+    <p class="head-note">Strategy and identity in one package. Start with your brand, or build yours and your company's together.</p>
+  </header>
+
+  <section class="cards">
+    <article class="card">
+      <div class="card-top">
+        <div class="pkg-stage"><div class="pkg-box" aria-hidden="true"><div class="pkg-face pkg-top"></div><div class="pkg-face pkg-side"></div><div class="pkg-face pkg-front"><span class="pkg-corner"></span><span class="pkg-kicker">Brand Therapy</span><span class="pkg-name">Leader<br>Brand<span class="purple-dot">.</span></span><span class="pkg-tag">Strategy<br>+ Identity</span></div></div></div>
+        <div>
+          <h2 class="tier-name">Leader Brand</h2>
+          <div class="price-row"><span class="price">$2,000</span></div>
+          <p class="timing">One-week delivery</p>
+        </div>
+        <p class="role">Your Brand Therapist for your brand image and digital presence<span class="purple-dot">.</span></p>
+      </div>
+      <p class="plus">What you get</p>
+      <div class="groups two">
+        <div class="col">
+        <div class="group g1">
+          <h3>Strategy</h3>
+          <ul class="list">
+            <li><strong>Focus Star&trade; framework:</strong> your five edges of differentiation
+              <ul class="sub">
+                <li><strong>People:</strong> your clear niche</li>
+                <li><strong>Personality:</strong> your unique brand personality</li>
+                <li><strong>Product:</strong> your offer, clarified</li>
+                <li><strong>Promise:</strong> your unique value</li>
+                <li><strong>Purpose:</strong> your why</li>
+              </ul>
+            </li>
+            <li><strong>Positioning statement</strong></li>
+            <li><strong>Approved copy library:</strong> tagline, one-liner, bios</li>
+          </ul>
+        </div>
+        <div class="group g3">
+          <h3>Digital presence</h3>
+          <ul class="list">
+            <li><strong>Social profile optimization:</strong> design and copy</li>
+            <li><strong>Social media templates:</strong> story, square, video cover</li>
+            <li><strong>Meeting background</strong></li>
+            <li><strong>Mini one-pager website</strong></li>
+            <li><strong>Stationery system:</strong> HTML slide deck template, business card, letterhead</li>
+          </ul>
+        </div>
+        </div>
+        <div class="col">
+        <div class="group g2">
+          <h3>Identity</h3>
+          <ul class="list">
+            <li><strong>Personal creative direction</strong> and image consulting</li>
+            <li><strong>Name wordmark:</strong> your name, designed as a logo</li>
+            <li><strong>AI-first digital brand guidelines</strong>
+              <ul class="sub">
+                <li>Color system</li>
+                <li>Typography system</li>
+                <li>Voice and writing guide</li>
+              </ul>
+            </li>
+            <li><strong>Personal image system:</strong> how you are photographed, dressed, and framed
+              <ul class="sub">
+                <li>Approved portraits</li>
+                <li>Outfit direction</li>
+                <li>AI portraits <span class="opt">optional</span></li>
+              </ul>
+            </li>
+            <li><strong>Centralized photo library</strong></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3>Delivery</h3>
+          <ul class="list">
+            <li><strong>4 to 6 hours</strong> of 1:1 workshops</li>
+            <li><strong>One-week delivery</strong></li>
+            <li><strong>Permanent private Brand Therapy OS</strong></li>
+            <li><strong>Use-with-AI prompts</strong> for easy asset generation</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card featured">
+      <span class="vf tr"></span><span class="vf bl"></span>
+      <div class="card-top">
+        <div class="pkg-stage duo"><div class="pkg-box" aria-hidden="true"><div class="pkg-face pkg-top"></div><div class="pkg-face pkg-side"></div><div class="pkg-face pkg-front"><span class="pkg-corner"></span><span class="pkg-kicker">Brand Therapy</span><span class="pkg-name">Company<br>Brand<span class="purple-dot">.</span></span><span class="pkg-tag">Strategy<br>+ Identity</span></div></div><div class="pkg-box sm" aria-hidden="true"><div class="pkg-face pkg-top"></div><div class="pkg-face pkg-side"></div><div class="pkg-face pkg-front"><span class="pkg-corner"></span><span class="pkg-kicker">Brand Therapy</span><span class="pkg-name">Leader<br>Brand<span class="purple-dot">.</span></span><span class="pkg-tag">Strategy<br>+ Identity</span></div></div></div>
+        <div>
+          <h2 class="tier-name">Leader Brand<br>+ Company Brand</h2>
+          <div class="price-row"><span class="price-ref" aria-label="Reference price 7,000 dollars, struck through">$7,000</span><span class="price">$5,000</span></div>
+          <p class="timing">Four to eight weeks</p>
+        </div>
+      </div>
+      <p class="plus">Everything in Leader Brand, plus</p>
+      <div class="groups">
+        <div class="group">
+          <h3>Company strategy</h3>
+          <ul class="list">
+            <li><strong>Company Focus Star&trade;:</strong> the company's five edges of differentiation</li>
+            <li><strong>Company positioning statement</strong></li>
+            <li><strong>Brand architecture:</strong> how the leader brand and the company brand work together</li>
+            <li><strong>Company approved copy library</strong></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3>Company identity</h3>
+          <ul class="list">
+            <li><strong>Company creative direction</strong></li>
+            <li><strong>Company logo design</strong></li>
+            <li><strong>Company AI-first digital brand guidelines:</strong> color, typography, voice and writing</li>
+            <li><strong>Company photo library</strong></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3>Company digital presence</h3>
+          <ul class="list">
+            <li><strong>Company social profile optimization:</strong> design and copy</li>
+            <li><strong>Company social media templates</strong></li>
+            <li><strong>Company mini one-pager website</strong></li>
+            <li><strong>Company stationery system</strong></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h3>Delivery</h3>
+          <ul class="list">
+            <li><strong>Company Brand Therapy OS</strong></li>
+            <li><strong>Use-with-AI prompts</strong> for the team</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <footer class="foot">
+    <span>A full website beyond the mini one-pager, account management, posting, and ads are not included in either package.</span>
+    <span class="tag"><span class="hash">#</span>yourbrandtherapy</span>
+  </footer>
+
+  </div>
+</main>
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById('themeSwitch');
+  function label() { btn.textContent = root.getAttribute('data-theme') === 'light' ? 'Switch to dark' : 'Switch to light'; }
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    var u = new URL(location.href); u.searchParams.set('theme', next); history.replaceState(null, '', u);
+    label();
+  });
+  label();
+})();
+</script>
+</body>
+</html>
